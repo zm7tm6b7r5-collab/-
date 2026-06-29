@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="MovieHub — 最新电影预告片，沉浸式观影体验" />
+  <title>MovieHub | 最新电影预告片</title>
+
+  <!-- Tailwind CSS v3 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#fff5f5', 100: '#ffe0e0', 200: '#ffb3b3', 300: '#ff8080', 400: '#FF4D4D', 500: '#ff1a1a', 600: '#e60000', 700: '#b30000', 800: '#800000', 900: '#4d0000' },
+            navy:  { 50: '#e8e8f0', 100: '#c5c5d6', 200: '#9e9eb8', 300: '#77779a', 400: '#5a5a80', 500: '#1A1A2E', 600: '#161626', 700: '#12121e', 800: '#0e0e16', 900: '#0a0a0e' },
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', '-apple-system', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'] },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-out',
+            'fade-up': 'fadeUp 0.6s ease-out',
+            'scale-in': 'scaleIn 0.4s ease-out',
+            'slide-down': 'slideDown 0.4s ease-out',
+            'shimmer': 'shimmer 2s infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+          },
+          keyframes: {
+            fadeIn:   { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            fadeUp:   { '0%': { opacity: '0', transform: 'translateY(30px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            scaleIn:  { '0%': { opacity: '0', transform: 'scale(0.9)' }, '100%': { opacity: '1', transform: 'scale(1)' } },
+            slideDown:{ '0%': { opacity: '0', transform: 'translateY(-20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            shimmer:  { '0%': { backgroundPosition: '-200% 0' }, '100%': { backgroundPosition: '200% 0' } },
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== Base ===== */
+    html { scroll-behavior: smooth; }
+    body { font-feature-settings: 'cv02','cv03','cv04','cv11'; }
+    ::selection { background: #FF4D4D; color: #fff; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255,77,77,0.35); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: rgba(255,77,77,0.6); }
+
+    /* ===== Glass morphism ===== */
+    .glass { backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); }
+    .glass-strong { backdrop-filter: blur(30px) saturate(200%); -webkit-backdrop-filter: blur(30px) saturate(200%); }
+    .glass-subtle { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+    /* ===== Skeleton screen ===== */
+    .skeleton {
+      background: linear-gradient(90deg, rgba(255,255,255,0.05) 25%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 2s infinite;
+      border-radius: 8px;
+    }
+    .dark .skeleton { background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 75%); background-size: 200% 100%; }
+
+    /* ===== Nav scroll states ===== */
+    #navbar { transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease; }
+    #navbar.scrolled { background: rgba(10,10,15,0.85); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
+    .light #navbar.scrolled { background: rgba(255,255,255,0.85); box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+
+    /* ===== Hero Carousel ===== */
+    .hero-slide { opacity: 0; transition: opacity 0.8s ease, transform 0.8s ease; }
+    .hero-slide.active { opacity: 1; transform: scale(1); }
+    .hero-slide.inactive { opacity: 0; transform: scale(1.05); }
+    .hero-indicator { transition: all 0.4s ease; cursor: pointer; }
+    .hero-indicator.active { width: 32px; background: #FF4D4D; }
+
+    /* ===== Movie Cards ===== */
+    .movie-card { transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.35s ease; }
+    .movie-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(255,77,77,0.15); }
+    .movie-card .card-overlay { opacity: 0; transition: opacity 0.35s ease; }
+    .movie-card:hover .card-overlay { opacity: 1; }
+    .movie-card .card-poster { transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .movie-card:hover .card-poster { transform: scale(1.08); }
+
+    /* ===== Trailer Modal ===== */
+    .modal-overlay { opacity: 0; pointer-events: none; transition: opacity 0.35s ease; }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+    .modal-content { transform: scale(0.92); opacity: 0; transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease; }
+    .modal-overlay.open .modal-content { transform: scale(1); opacity: 1; }
+
+    /* ===== Theme transition ===== */
+    body, #navbar, .movie-card, .modal-content { transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease; }
+
+    /* ===== Filter Chips ===== */
+    .filter-chip { transition: all 0.3s ease; }
+    .filter-chip.active { background: #FF4D4D !important; color: #fff !important; border-color: #FF4D4D !important; }
+
+    /* ===== YouTube BG player ===== */
+    #heroYtContainer { pointer-events: none; }
+    #heroYtContainer iframe { pointer-events: none; }
+
+    /* ===== Rating badge shimmer ===== */
+    .rating-badge { text-shadow: 0 0 10px rgba(245,197,24,0.3); }
+
+    /* ===== Loading spinner ===== */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .loader { animation: spin 0.8s linear infinite; }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body class="dark:bg-[#0a0a0f] bg-white dark:text-gray-100 text-gray-900 font-sans antialiased transition-colors duration-300">
+
+  <!-- Skip to content (a11y) -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:bg-brand-400 focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">跳转到主内容</a>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav id="navbar" class="glass fixed top-0 left-0 right-0 z-50 h-16 border-b dark:border-white/5 border-gray-200/60 transition-all">
+    <div class="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group" aria-label="MovieHub 首页">
+        <div class="w-9 h-9 bg-brand-400 rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-play text-white text-sm"></i>
+        </div>
+        <span class="text-xl font-black tracking-tight dark:text-white">Movie<span class="text-brand-400">Hub</span></span>
+      </a>
+
+      <!-- Search (desktop) -->
+      <div class="hidden md:flex items-center gap-2 glass-subtle dark:bg-white/5 bg-black/5 rounded-xl px-4 py-2 border dark:border-white/10 border-gray-200/60 flex-1 max-w-md mx-8">
+        <i class="fa-solid fa-magnifying-glass dark:text-gray-400 text-gray-500 text-sm"></i>
+        <input id="searchInput" type="text" placeholder="搜索电影、类型或导演..."
+          class="bg-transparent border-none outline-none w-full text-sm dark:text-white text-gray-900 dark:placeholder-gray-500 placeholder-gray-400"
+          aria-label="搜索电影" />
+        <button id="clearSearch" class="hidden dark:text-gray-400 text-gray-500 hover:text-brand-400 transition-colors" aria-label="清除搜索">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-1 sm:gap-2">
+        <!-- Theme toggle -->
+        <button id="themeToggle" class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-white/10 dark:hover:bg-white/10 hover:bg-black/5 transition-colors" aria-label="切换深色/浅色模式" title="切换主题">
+          <i id="themeIcon" class="fa-solid fa-moon text-lg dark:text-gray-300 text-gray-600"></i>
+        </button>
+        <!-- Mobile menu -->
+        <button id="mobileMenuBtn" class="md:hidden w-9 h-9 rounded-lg flex items-center justify-center hover:bg-white/10 dark:hover:bg-white/10 hover:bg-black/5 transition-colors" aria-label="菜单" aria-expanded="false">
+          <i class="fa-solid fa-bars dark:text-gray-300 text-gray-600"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile search (hidden by default) -->
+    <div id="mobileSearch" class="md:hidden px-4 pb-3 hidden">
+      <div class="flex items-center gap-2 glass-subtle dark:bg-white/5 bg-black/5 rounded-xl px-4 py-2.5 border dark:border-white/10 border-gray-200/60">
+        <i class="fa-solid fa-magnifying-glass dark:text-gray-400 text-gray-500 text-sm"></i>
+        <input id="searchInputMobile" type="text" placeholder="搜索电影..."
+          class="bg-transparent border-none outline-none w-full text-sm dark:text-white text-gray-900 dark:placeholder-gray-500 placeholder-gray-400" />
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="relative w-full h-[70vh] sm:h-[80vh] min-h-[500px] max-h-[900px] overflow-hidden mt-16" aria-label="精选电影轮播">
+
+    <!-- YouTube background player -->
+    <div id="heroYtContainer" class="absolute inset-0 scale-110"></div>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/60 to-[#0a0a0f]/40 z-10"></div>
+    <!-- Side gradients for depth -->
+    <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0a0a0f] to-transparent z-10"></div>
+    <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#0a0a0f] to-transparent z-10"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-20 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-end pb-16 sm:pb-24">
+      <div id="heroContent" class="animate-fade-in max-w-2xl">
+        <!-- Content rendered by JS -->
+      </div>
+    </div>
+
+    <!-- Carousel indicators -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2" id="heroIndicators"></div>
+
+    <!-- Arrow buttons -->
+    <button id="heroPrev" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass dark:bg-white/10 bg-black/20 flex items-center justify-center hover:bg-brand-400 hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100" aria-label="上一部">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <button id="heroNext" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full glass dark:bg-white/10 bg-black/20 flex items-center justify-center hover:bg-brand-400 hover:text-white transition-all duration-300" aria-label="下一部">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </section>
+
+  <!-- ==================== FILTERS ==================== -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6" id="main-content">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <!-- Genre chips -->
+      <div class="flex flex-wrap gap-2" id="genreFilters" role="radiogroup" aria-label="按类型筛选">
+        <button class="filter-chip active px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="all" role="radio" aria-checked="true">全部</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="动作" role="radio" aria-checked="false">动作</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="科幻" role="radio" aria-checked="false">科幻</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="喜剧" role="radio" aria-checked="false">喜剧</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="恐怖" role="radio" aria-checked="false">恐怖</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="剧情" role="radio" aria-checked="false">剧情</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-genre="动画" role="radio" aria-checked="false">动画</button>
+      </div>
+
+      <!-- Time filter -->
+      <div class="flex gap-2" id="timeFilters" role="radiogroup" aria-label="按时间筛选">
+        <button class="filter-chip active px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-time="all" role="radio" aria-checked="true">全部时间</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-time="this-week" role="radio" aria-checked="false">本周</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-time="this-month" role="radio" aria-checked="false">本月</button>
+        <button class="filter-chip px-4 py-2 rounded-full text-sm font-medium border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-100 dark:text-gray-300 text-gray-700 hover:border-brand-400/50 transition-all" data-time="upcoming" role="radio" aria-checked="false">即将上映</button>
+      </div>
+    </div>
+
+    <!-- Results count -->
+    <p id="resultsCount" class="text-sm dark:text-gray-500 text-gray-400 mb-6"></p>
+
+    <!-- ==================== MOVIE GRID ==================== -->
+    <div id="movieGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6" role="list" aria-label="电影列表">
+      <!-- Rendered by JS -->
+    </div>
+
+    <!-- Skeleton loading -->
+    <div id="skeletonGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 hidden">
+      <!-- JS populates skeletons -->
+    </div>
+
+    <!-- Load more trigger -->
+    <div id="loadMoreTrigger" class="h-20 flex items-center justify-center mt-8">
+      <div class="loader w-8 h-8 border-2 border-brand-400 border-t-transparent rounded-full"></div>
+    </div>
+    <p id="noMoreMovies" class="text-center dark:text-gray-500 text-gray-400 py-8 hidden">—— 已加载全部电影 ——</p>
+  </div>
+
+  <!-- ==================== TRAILER MODAL ==================== -->
+  <div id="trailerModal" class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90" role="dialog" aria-modal="true" aria-label="预告片播放器">
+    <div class="modal-content glass-strong dark:bg-navy-700/95 bg-white/95 rounded-2xl w-full max-w-5xl overflow-hidden border dark:border-white/10 border-gray-200 shadow-2xl">
+      <!-- Modal header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b dark:border-white/5 border-gray-200">
+        <h3 id="modalTitle" class="font-bold text-lg dark:text-white truncate pr-4">预告片</h3>
+        <button onclick="closeTrailer()" class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-white/10 dark:hover:bg-white/10 hover:bg-black/5 transition-colors" aria-label="关闭">
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+      </div>
+      <!-- Video container -->
+      <div class="relative bg-black aspect-video">
+        <div id="ytPlayer" class="w-full h-full"></div>
+        <!-- Loading state -->
+        <div id="trailerLoading" class="absolute inset-0 flex items-center justify-center bg-black">
+          <div class="flex flex-col items-center gap-4">
+            <div class="loader w-10 h-10 border-2 border-brand-400 border-t-transparent rounded-full"></div>
+            <span class="text-gray-400 text-sm">加载预告片中...</span>
+          </div>
+        </div>
+      </div>
+      <!-- Controls bar -->
+      <div class="flex items-center gap-4 px-6 py-3 dark:bg-navy-800/50 bg-gray-50 border-t dark:border-white/5 border-gray-200">
+        <button id="modalPlayPause" class="w-9 h-9 rounded-lg flex items-center justify-center bg-brand-400 text-white hover:bg-brand-500 transition-colors" aria-label="暂停">
+          <i class="fa-solid fa-pause text-sm"></i>
+        </button>
+        <div class="flex items-center gap-2 flex-1">
+          <i class="fa-solid fa-volume-high dark:text-gray-400 text-gray-600 text-xs"></i>
+          <input id="modalVolume" type="range" min="0" max="100" value="80" class="w-24 sm:w-32 accent-brand-400" aria-label="音量" />
+        </div>
+        <button id="modalFullscreen" class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-white/10 dark:hover:bg-white/10 hover:bg-black/5 transition-colors" aria-label="全屏">
+          <i class="fa-solid fa-expand dark:text-gray-300 text-gray-600"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t dark:border-white/5 border-gray-200 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <!-- Brand -->
+        <div class="col-span-2 md:col-span-1">
+          <a href="#" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 bg-brand-400 rounded-lg flex items-center justify-center"><i class="fa-solid fa-play text-white text-xs"></i></div>
+            <span class="text-lg font-black dark:text-white">Movie<span class="text-brand-400">Hub</span></span>
+          </a>
+          <p class="text-sm dark:text-gray-500 text-gray-400 leading-relaxed">最新电影预告片一站式平台，沉浸式观影体验。</p>
+        </div>
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold text-sm mb-4 dark:text-white">导航</h4>
+          <div class="flex flex-col gap-2 text-sm dark:text-gray-400 text-gray-500">
+            <a href="#" class="hover:text-brand-400 transition-colors">首页</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">热门电影</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">即将上映</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">排行榜</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-4 dark:text-white">关于</h4>
+          <div class="flex flex-col gap-2 text-sm dark:text-gray-400 text-gray-500">
+            <a href="#" class="hover:text-brand-400 transition-colors">关于我们</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">联系方式</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">隐私政策</a>
+            <a href="#" class="hover:text-brand-400 transition-colors">服务条款</a>
+          </div>
+        </div>
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold text-sm mb-4 dark:text-white">关注我们</h4>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:bg-brand-400 hover:text-white transition-all" aria-label="微博"><i class="fa-brands fa-weibo"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:bg-brand-400 hover:text-white transition-all" aria-label="微信"><i class="fa-brands fa-weixin"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:bg-brand-400 hover:text-white transition-all" aria-label="哔哩哔哩"><i class="fa-brands fa-bilibili"></i></a>
+            <a href="#" class="w-9 h-9 rounded-lg dark:bg-white/5 bg-gray-100 flex items-center justify-center dark:text-gray-400 text-gray-500 hover:bg-brand-400 hover:text-white transition-all" aria-label="抖音"><i class="fa-brands fa-tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t dark:border-white/5 border-gray-200 text-center text-sm dark:text-gray-600 text-gray-400">
+        &copy; 2026 MovieHub. 数据来源于网络，仅供学习参考。所有电影版权归原作者所有。
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ JAVASCRIPT ============ -->
+  <script>
+  (function() {
+    'use strict';
+
+    /* ================================================================
+     *  MOVIE DATA — 2025-2026 最新电影
+     *  每部电影包含：id, title, titleEn, year, rating, ratingSite,
+     *  genres, duration, director, description, posterColor, posterEmoji,
+     *  trailerId (YouTube video ID), releaseDate, isUpcoming
+     * ================================================================ */
+    const MOVIES = [
+      { id:1, title:'超人', titleEn:'Superman', year:2025, rating:8.7, ratingSite:'IMDb', genres:['动作','科幻'], duration:'142分钟', director:'詹姆斯·古恩', description:'克拉克·肯特作为超人，在重建氪星遗产与守护地球之间挣扎。面对前所未有的威胁，他必须证明希望依然存在。', posterColor:'linear-gradient(135deg, #1a3a5c, #2d6bc4)', posterEmoji:'🦸', trailerId:'b3XGCjU_y7o', releaseDate:'2025-07-11', isUpcoming:false },
+      { id:2, title:'阿凡达：火与烬', titleEn:'Avatar: Fire and Ash', year:2025, rating:8.9, ratingSite:'IMDb', genres:['科幻','动作','冒险'], duration:'192分钟', director:'詹姆斯·卡梅隆', description:'杰克·萨利一家深入潘多拉星球火山区域，遭遇全新的纳美人部落——"灰烬族"。火与烬的冲突将决定整个星球的命运。', posterColor:'linear-gradient(135deg, #5c1a1a, #d4420a)', posterEmoji:'🌋', trailerId:'d9MyW72ELq0', releaseDate:'2025-12-19', isUpcoming:false },
+      { id:3, title:'碟中谍：最终清算', titleEn:'Mission: Impossible – The Final Reckoning', year:2025, rating:8.5, ratingSite:'IMDb', genres:['动作','惊悚'], duration:'163分钟', director:'克里斯托弗·麦奎里', description:'伊森·亨特面对最终的威胁——人工智能"实体"的全面觉醒。这是一场关乎所有特工生命的最终战役。', posterColor:'linear-gradient(135deg, #1a2d3e, #3a7ab0)', posterEmoji:'💥', trailerId:'avkWvQHIMnw', releaseDate:'2025-05-23', isUpcoming:false },
+      { id:4, title:'新神奇四侠', titleEn:'The Fantastic Four: First Steps', year:2025, rating:8.3, ratingSite:'IMDb', genres:['动作','科幻'], duration:'135分钟', director:'马特·沙克曼', description:'漫威第一家庭首次亮相MCU。里德·理查兹、苏·斯托姆、约翰尼·斯托姆和本·格瑞姆在宇宙射线中获得超能力，共同对抗来自负空间的威胁。', posterColor:'linear-gradient(135deg, #2d3e8c, #5c9ce0)', posterEmoji:'👨‍🔬', trailerId:'ZcGz_gfFhGE', releaseDate:'2025-07-25', isUpcoming:false },
+      { id:5, title:'蜘蛛侠：超越宇宙', titleEn:'Spider-Man: Beyond the Spider-Verse', year:2026, rating:9.0, ratingSite:'IMDb', genres:['动画','动作','科幻'], duration:'140分钟', director:'乔伊姆·多斯·桑托斯', description:'迈尔斯·莫拉莱斯被困在另一个维度，必须找到回家的路。而斑点对整个多元宇宙的威胁正迫在眉睫。', posterColor:'linear-gradient(135deg, #5c1a6b, #d040b0)', posterEmoji:'🕷️', trailerId:'shW9i6k8cB0', releaseDate:'2026-06-05', isUpcoming:true },
+      { id:6, title:'复仇者联盟：末日', titleEn:'Avengers: Doomsday', year:2026, rating:8.9, ratingSite:'IMDb', genres:['动作','科幻'], duration:'156分钟', director:'罗素兄弟', description:'毁灭博士降临。多元宇宙的裂缝中，维克多·冯·杜姆崛起为最危险的威胁。复仇者联盟必须重组，面对最终的末日。', posterColor:'linear-gradient(135deg, #1a5c1a, #2d8c3a)', posterEmoji:'🛡️', trailerId:'u76SqNFtJaA', releaseDate:'2026-05-01', isUpcoming:true },
+      { id:7, title:'沙丘：救世主', titleEn:'Dune: Messiah', year:2026, rating:8.8, ratingSite:'IMDb', genres:['科幻','剧情','冒险'], duration:'167分钟', director:'丹尼斯·维伦纽瓦', description:'保罗·厄崔迪的圣战席卷整个已知宇宙。作为皇帝的他在权力、爱与预知的命运之间摇摆，帝国的根基开始动摇。', posterColor:'linear-gradient(135deg, #5c4a1a, #c49220)', posterEmoji:'🏜️', trailerId:'U2Qp5jcBCoI', releaseDate:'2026-11-20', isUpcoming:true },
+      { id:8, title:'玩具总动员5', titleEn:'Toy Story 5', year:2026, rating:8.6, ratingSite:'IMDb', genres:['动画','喜剧','家庭'], duration:'105分钟', director:'安德鲁·斯坦顿', description:'玩具们面临数字时代的最大挑战——当孩子们全部转向虚拟玩具时，传统玩具该如何证明自己的价值？', posterColor:'linear-gradient(135deg, #3e5c1a, #7ab030)', posterEmoji:'🤠', trailerId:'6PYrQSL5ZdE', releaseDate:'2026-06-19', isUpcoming:true },
+      { id:9, title:'新蝙蝠侠2', titleEn:'The Batman – Part II', year:2026, rating:8.7, ratingSite:'IMDb', genres:['动作','犯罪','剧情'], duration:'155分钟', director:'马特·里夫斯', description:'蝙蝠侠深入哥谭市地下犯罪网络的核心。一个比谜语人更危险的反派浮出水面——猫头鹰法庭。', posterColor:'linear-gradient(135deg, #1a1a1a, #4a2a1a)', posterEmoji:'🦇', trailerId:'NLOp_6QH0Jg', releaseDate:'2026-10-02', isUpcoming:true },
+      { id:10, title:'侏罗纪世界：重生', titleEn:'Jurassic World: Rebirth', year:2025, rating:7.9, ratingSite:'IMDb', genres:['动作','科幻','冒险'], duration:'138分钟', director:'加雷斯·爱德华兹', description:'恐龙与人类共存的脆弱平衡被打破。一支精英小队深入禁区，寻找能拯救人类的古老基因密码。', posterColor:'linear-gradient(135deg, #3e5c1a, #6b8c2a)', posterEmoji:'🦖', trailerId:'R2LwRmBtEPQ', releaseDate:'2025-07-02', isUpcoming:false },
+      { id:11, title:'惊天魔盗团3', titleEn:'Now You See Me 3', year:2025, rating:8.0, ratingSite:'IMDb', genres:['动作','犯罪','喜剧'], duration:'125分钟', director:'鲁本·弗雷斯彻', description:'天启四骑士重出江湖。这一次，他们面对的是一个掌握全世界秘密的古老组织，魔术的最高境界即将揭晓。', posterColor:'linear-gradient(135deg, #3e1a5c, #7a3ab0)', posterEmoji:'🪄', trailerId:'nTBfQ4CgXGc', releaseDate:'2025-11-14', isUpcoming:false },
+      { id:12, title:'哥斯拉大战金刚2', titleEn:'Godzilla x Kong: The New Empire', year:2025, rating:7.8, ratingSite:'IMDb', genres:['动作','科幻'], duration:'135分钟', director:'亚当·温加德', description:'两大泰坦巨兽联手对抗来自地心世界的古老威胁。这一次，人类的命运悬于一线。', posterColor:'linear-gradient(135deg, #5c2a1a, #b05020)', posterEmoji:'🦍', trailerId:'lV1OOJGXOcA', releaseDate:'2025-03-28', isUpcoming:false },
+      { id:13, title:'头脑特工队3', titleEn:'Inside Out 3', year:2026, rating:8.4, ratingSite:'IMDb', genres:['动画','喜剧','家庭'], duration:'100分钟', director:'凯尔西·曼', description:'莱莉步入青春期晚期，全新的情绪——焦虑2.0、憧憬和迷茫——加入大脑总部。一场情绪大冒险再度开启。', posterColor:'linear-gradient(135deg, #3e5c8c, #5c80d0)', posterEmoji:'🧠', trailerId:'LEjhYwLfBug', releaseDate:'2026-06-13', isUpcoming:true },
+      { id:14, title:'史莱克5', titleEn:'Shrek 5', year:2026, rating:8.2, ratingSite:'IMDb', genres:['动画','喜剧','冒险'], duration:'98分钟', director:'沃尔特·道恩', description:'史莱克和菲奥娜的孩子们长大了，沼泽地的生活迎来全新的混乱。一位神秘访客的到来打破了宁静。', posterColor:'linear-gradient(135deg, #4a6b1a, #7ab020)', posterEmoji:'🧅', trailerId:'Tce1sE4XkYk', releaseDate:'2026-07-01', isUpcoming:true },
+      { id:15, title:'招魂4：最后的仪式', titleEn:'The Conjuring: Last Rites', year:2025, rating:8.3, ratingSite:'IMDb', genres:['恐怖','惊悚','悬疑'], duration:'118分钟', director:'迈克尔·查韦斯', description:'沃伦夫妇面对他们有史以来最恐怖的案件。一个古老的恶魔仪式将所有线索串联——这是终极的超自然对决。', posterColor:'linear-gradient(135deg, #1a1a1a, #3a1a1a)', posterEmoji:'👻', trailerId:'eFSO3jryqA8', releaseDate:'2025-09-05', isUpcoming:false },
+      { id:16, title:'刺猬索尼克4', titleEn:'Sonic the Hedgehog 4', year:2026, rating:7.7, ratingSite:'IMDb', genres:['动作','喜剧','动画'], duration:'110分钟', director:'杰夫·福勒', description:'索尼克和他的伙伴们面对来自平行宇宙的新敌人——金属索尼克。速度与力量的终极对决一触即发。', posterColor:'linear-gradient(135deg, #1a3e8c, #3060d0)', posterEmoji:'🦔', trailerId:'qSu6i2JOXqk', releaseDate:'2026-03-19', isUpcoming:false },
+      { id:17, title:'刀锋战士', titleEn:'Blade', year:2026, rating:8.5, ratingSite:'IMDb', genres:['动作','恐怖','科幻'], duration:'130分钟', director:'扬·德芒热', description:'半人半吸血鬼的刀锋战士艾瑞克·布鲁克斯重出江湖。吸血鬼世界酝酿着一场足以吞噬人类的阴谋。', posterColor:'linear-gradient(135deg, #1a1a2e, #5c1a1a)', posterEmoji:'🗡️', trailerId:'R4LzQXG9bX8', releaseDate:'2026-02-13', isUpcoming:false },
+      { id:18, title:'海洋奇缘3', titleEn:'Moana 3', year:2026, rating:8.1, ratingSite:'IMDb', genres:['动画','冒险','喜剧'], duration:'108分钟', director:'大卫·德瑞克', description:'莫阿娜带着她的新船员远航至前所未见的海域。一个被遗忘的古老海洋文明等待着被发现。', posterColor:'linear-gradient(135deg, #2a7a8c, #4ac0d0)', posterEmoji:'🌊', trailerId:'cOl8wDqVkI4', releaseDate:'2026-11-25', isUpcoming:true },
+    ];
+
+    /* ================================================================
+     *  GLOBAL STATE
+     * ================================================================ */
+    let currentGenre = 'all';
+    let currentTime  = 'all';
+    let displayedCount = 0;
+    const PER_PAGE = 10;
+    let heroIndex = 0;
+    let heroTimer = null;
+    let ytPlayer = null;
+    let ytBgPlayer = null;
+    let isModalOpen = false;
+    let isDarkMode = true;
+
+    /* ================================================================
+     *  DOM REFS
+     * ================================================================ */
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => document.querySelectorAll(sel);
+
+    /* ================================================================
+     *  THEME TOGGLE
+     * ================================================================ */
+    function initTheme() {
+      const saved = localStorage.getItem('moviehub-theme');
+      isDarkMode = saved !== 'light';
+      applyTheme();
+      $('#themeToggle').addEventListener('click', () => {
+        isDarkMode = !isDarkMode;
+        applyTheme();
+        localStorage.setItem('moviehub-theme', isDarkMode ? 'dark' : 'light');
+      });
+    }
+
+    function applyTheme() {
+      const html = document.documentElement;
+      const icon = $('#themeIcon');
+      if (isDarkMode) {
+        html.classList.add('dark'); html.classList.remove('light');
+        if (icon) { icon.className = 'fa-solid fa-moon text-lg'; }
+      } else {
+        html.classList.remove('dark'); html.classList.add('light');
+        if (icon) { icon.className = 'fa-solid fa-sun text-lg'; }
+      }
+    }
+
+    /* ================================================================
+     *  NAV SCROLL EFFECT
+     * ================================================================ */
+    function initNavScroll() {
+      const nav = $('#navbar');
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+      }, { passive: true });
+    }
+
+    /* ================================================================
+     *  MOBILE MENU
+     * ================================================================ */
+    function initMobileMenu() {
+      const btn = $('#mobileMenuBtn');
+      const panel = $('#mobileSearch');
+      btn.addEventListener('click', () => {
+        panel.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', !panel.classList.contains('hidden'));
+      });
+    }
+
+    /* ================================================================
+     *  SEARCH
+     * ================================================================ */
+    function initSearch() {
+      const desktop = $('#searchInput');
+      const mobile  = $('#searchInputMobile');
+      const clearBtn = $('#clearSearch');
+
+      function handleInput() {
+        clearBtn.classList.toggle('hidden', !this.value);
+        renderMovies();
+      }
+      desktop.addEventListener('input', handleInput);
+      mobile.addEventListener('input', handleInput);
+      // Sync desktop/mobile
+      desktop.addEventListener('input', () => { mobile.value = desktop.value; });
+      mobile.addEventListener('input', () => { desktop.value = mobile.value; });
+      clearBtn.addEventListener('click', () => {
+        desktop.value = ''; mobile.value = '';
+        clearBtn.classList.add('hidden');
+        renderMovies();
+      });
+    }
+
+    /* ================================================================
+     *  FILTERS
+     * ================================================================ */
+    function initFilters() {
+      // Genre
+      $('#genreFilters').addEventListener('click', (e) => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        $$('#genreFilters .filter-chip').forEach(c => { c.classList.remove('active'); c.setAttribute('aria-checked','false'); });
+        chip.classList.add('active'); chip.setAttribute('aria-checked','true');
+        currentGenre = chip.dataset.genre;
+        resetAndRender();
+      });
+      // Time
+      $('#timeFilters').addEventListener('click', (e) => {
+        const chip = e.target.closest('.filter-chip');
+        if (!chip) return;
+        $$('#timeFilters .filter-chip').forEach(c => { c.classList.remove('active'); c.setAttribute('aria-checked','false'); });
+        chip.classList.add('active'); chip.setAttribute('aria-checked','true');
+        currentTime = chip.dataset.time;
+        resetAndRender();
+      });
+    }
+
+    function getFilteredMovies() {
+      const search = ($('#searchInput').value || '').trim().toLowerCase();
+      let list = MOVIES.slice();
+
+      // Genre filter
+      if (currentGenre !== 'all') {
+        list = list.filter(m => m.genres.includes(currentGenre));
+      }
+      // Time filter
+      const now = new Date('2026-06-01');
+      if (currentTime === 'this-week') {
+        const weekLater = new Date(now); weekLater.setDate(now.getDate() + 7);
+        list = list.filter(m => { const d = new Date(m.releaseDate); return d >= now && d <= weekLater; });
+      } else if (currentTime === 'this-month') {
+        const monthLater = new Date(now); monthLater.setMonth(now.getMonth() + 1);
+        list = list.filter(m => { const d = new Date(m.releaseDate); return d >= now && d <= monthLater; });
+      } else if (currentTime === 'upcoming') {
+        list = list.filter(m => m.isUpcoming);
+      }
+      // Search
+      if (search) {
+        list = list.filter(m =>
+          m.title.includes(search) ||
+          m.titleEn.toLowerCase().includes(search) ||
+          m.genres.some(g => g.includes(search)) ||
+          m.director.includes(search)
+        );
+      }
+      return list;
+    }
+
+    function resetAndRender() {
+      displayedCount = 0;
+      $('#movieGrid').innerHTML = '';
+      $('#noMoreMovies').classList.add('hidden');
+      $('#loadMoreTrigger').classList.remove('hidden');
+      renderMovies();
+    }
+
+    /* ================================================================
+     *  RENDER MOVIES
+     * ================================================================ */
+    function renderMovies() {
+      const filtered = getFilteredMovies();
+      $('#resultsCount').textContent = `共找到 ${filtered.length} 部电影`;
+
+      // Reset
+      if (displayedCount === 0) {
+        $('#movieGrid').innerHTML = '';
+        $('#noMoreMovies').classList.add('hidden');
+        $('#loadMoreTrigger').classList.remove('hidden');
+      }
+
+      const toShow = filtered.slice(0, displayedCount + PER_PAGE);
+      displayedCount = Math.min(displayedCount + PER_PAGE, filtered.length);
+
+      if (displayedCount >= filtered.length) {
+        $('#loadMoreTrigger').classList.add('hidden');
+        if (filtered.length > 0) $('#noMoreMovies').classList.remove('hidden');
+      }
+
+      if (filtered.length === 0) {
+        $('#movieGrid').innerHTML = `<div class="col-span-full text-center py-20">
+          <i class="fa-solid fa-film text-5xl dark:text-gray-700 text-gray-300 mb-4 block"></i>
+          <p class="dark:text-gray-500 text-gray-400">没有找到匹配的电影</p>
+        </div>`;
+        $('#loadMoreTrigger').classList.add('hidden');
+        return;
+      }
+
+      // Build cards
+      const grid = $('#movieGrid');
+      const startIdx = grid.children.length;
+      for (let i = startIdx; i < displayedCount; i++) {
+        if (i >= filtered.length) break;
+        const m = filtered[i];
+        const card = createMovieCard(m);
+        grid.appendChild(card);
+      }
+    }
+
+    function createMovieCard(m) {
+      const card = document.createElement('div');
+      card.className = 'movie-card group relative rounded-2xl overflow-hidden cursor-pointer dark:bg-navy-700/50 bg-white border dark:border-white/5 border-gray-200 shadow-lg';
+      card.setAttribute('role', 'listitem');
+      card.tabIndex = 0;
+      card.setAttribute('aria-label', `${m.title} — ${m.genres.join('、')}，评分 ${m.rating}`);
+      card.innerHTML = `
+        <!-- Poster -->
+        <div class="relative aspect-[2/3] overflow-hidden">
+          <div class="card-poster w-full h-full flex items-center justify-center" style="background:${m.posterColor}">
+            <span class="text-6xl sm:text-7xl opacity-30 select-none">${m.posterEmoji}</span>
+          </div>
+          <!-- Gradient overlay -->
+          <div class="card-overlay absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-4">
+            <p class="text-white text-xs leading-relaxed line-clamp-3 mb-3">${m.description}</p>
+            <button class="w-full py-2.5 rounded-xl bg-brand-400 hover:bg-brand-500 text-white text-sm font-semibold flex items-center justify-center gap-2 transition-colors" onclick="event.stopPropagation(); openTrailer('${m.trailerId}','${m.title}')">
+              <i class="fa-solid fa-play text-xs"></i> 播放预告片
+            </button>
+          </div>
+          <!-- Rating badge -->
+          <div class="absolute top-3 left-3 bg-black/70 glass-subtle rounded-lg px-2.5 py-1 flex items-center gap-1">
+            <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+            <span class="text-white text-xs font-bold">${m.rating}</span>
+          </div>
+          <!-- Upcoming badge -->
+          ${m.isUpcoming ? '<div class="absolute top-3 right-3 bg-brand-400/90 rounded-lg px-2.5 py-1"><span class="text-white text-[10px] font-bold uppercase tracking-wider">即将上映</span></div>' : ''}
+        </div>
+        <!-- Info -->
+        <div class="p-3 sm:p-4">
+          <h3 class="font-bold text-sm sm:text-base dark:text-white truncate">${m.title}</h3>
+          <p class="text-xs dark:text-gray-500 text-gray-400 mt-0.5">${m.titleEn}</p>
+          <div class="flex flex-wrap gap-1.5 mt-2.5">
+            ${m.genres.map(g => `<span class="text-[10px] px-2 py-0.5 rounded-md dark:bg-white/5 bg-gray-100 dark:text-gray-400 text-gray-500">${g}</span>`).join('')}
+          </div>
+          <div class="flex items-center justify-between mt-3 text-[11px] dark:text-gray-500 text-gray-400">
+            <span>${m.releaseDate}</span>
+            <span>${m.duration}</span>
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', () => openTrailer(m.trailerId, m.title));
+      card.addEventListener('keydown', (e) => { if (e.key === 'Enter') openTrailer(m.trailerId, m.title); });
+      return card;
+    }
+
+    /* ================================================================
+     *  INFINITE SCROLL
+     * ================================================================ */
+    function initInfiniteScroll() {
+      const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+          const filtered = getFilteredMovies();
+          if (displayedCount >= filtered.length) return;
+          showSkeletons();
+          setTimeout(() => {
+            hideSkeletons();
+            renderMovies();
+          }, 600);
+        }
+      }, { rootMargin: '200px' });
+      observer.observe($('#loadMoreTrigger'));
+    }
+
+    function showSkeletons() {
+      const grid = $('#skeletonGrid');
+      grid.classList.remove('hidden');
+      grid.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        const sk = document.createElement('div');
+        sk.innerHTML = `
+          <div class="rounded-2xl overflow-hidden">
+            <div class="skeleton aspect-[2/3] w-full"></div>
+            <div class="p-3 space-y-2">
+              <div class="skeleton h-4 w-3/4"></div>
+              <div class="skeleton h-3 w-1/2"></div>
+              <div class="flex gap-1"><div class="skeleton h-5 w-12"></div><div class="skeleton h-5 w-12"></div></div>
+            </div>
+          </div>`;
+        grid.appendChild(sk);
+      }
+      $('#loadMoreTrigger').classList.add('hidden');
+    }
+
+    function hideSkeletons() {
+      $('#skeletonGrid').classList.add('hidden');
+      $('#skeletonGrid').innerHTML = '';
+      $('#loadMoreTrigger').classList.remove('hidden');
+    }
+
+    /* ================================================================
+     *  HERO CAROUSEL
+     * ================================================================ */
+    function initHero() {
+      const featured = MOVIES.slice(0, 3);
+      renderHeroContent(featured[heroIndex]);
+      renderHeroIndicators(featured);
+
+      $('#heroNext').addEventListener('click', () => { heroIndex = (heroIndex + 1) % featured.length; updateHero(featured); });
+      $('#heroPrev').addEventListener('click', () => { heroIndex = (heroIndex - 1 + featured.length) % featured.length; updateHero(featured); });
+      // Keyboard nav
+      document.addEventListener('keydown', (e) => {
+        if (isModalOpen) return;
+        if (e.key === 'ArrowRight') { heroIndex = (heroIndex + 1) % featured.length; updateHero(featured); }
+        if (e.key === 'ArrowLeft')  { heroIndex = (heroIndex - 1 + featured.length) % featured.length; updateHero(featured); }
+      });
+
+      startHeroAutoplay(featured);
+      loadHeroBgVideo(featured[heroIndex].trailerId);
+    }
+
+    function renderHeroContent(m) {
+      $('#heroContent').innerHTML = `
+        <div class="animate-fade-up">
+          ${m.isUpcoming ? '<span class="inline-block bg-brand-400 text-white text-xs font-bold px-3 py-1 rounded-md mb-4 uppercase tracking-widest">即将上映</span>' : '<span class="inline-block bg-brand-400 text-white text-xs font-bold px-3 py-1 rounded-md mb-4 uppercase tracking-widest">热映中</span>'}
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight leading-tight mb-3">${m.title}</h1>
+          <p class="text-lg sm:text-xl text-gray-300 mb-2 font-medium">${m.titleEn}</p>
+          <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-4 text-sm text-gray-400">
+            <span class="flex items-center gap-1 text-yellow-400 font-bold"><i class="fa-solid fa-star"></i> ${m.rating} <span class="text-gray-500 font-normal ml-0.5">${m.ratingSite}</span></span>
+            <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+            <span>${m.year}</span>
+            <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+            <span>${m.genres.join(' / ')}</span>
+            <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+            <span>${m.duration}</span>
+            <span class="w-1 h-1 rounded-full bg-gray-600"></span>
+            <span>${m.releaseDate} 上映</span>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-6 max-w-lg line-clamp-3">${m.description}</p>
+          <div class="flex gap-3">
+            <button onclick="openTrailer('${m.trailerId}','${m.title}')" class="inline-flex items-center gap-2 bg-brand-400 hover:bg-brand-500 text-white px-6 py-3 rounded-xl font-semibold transition-all hover:shadow-lg hover:shadow-brand-400/25 active:scale-95">
+              <i class="fa-solid fa-play"></i> 观看预告片
+            </button>
+            <button class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-semibold backdrop-blur-sm border border-white/10 transition-all">
+              <i class="fa-regular fa-bookmark"></i> 收藏
+            </button>
+          </div>
+        </div>`;
+    }
+
+    function renderHeroIndicators(featured) {
+      const container = $('#heroIndicators');
+      container.innerHTML = featured.map((_, i) =>
+        `<button class="hero-indicator w-3 h-3 rounded-full bg-white/40 ${i === heroIndex ? 'active w-8 bg-brand-400' : ''}" data-index="${i}" aria-label="切换到第${i+1}部"></button>`
+      ).join('');
+      container.querySelectorAll('.hero-indicator').forEach(btn => {
+        btn.addEventListener('click', () => {
+          heroIndex = parseInt(btn.dataset.index);
+          updateHero(featured);
+          resetHeroAutoplay(featured);
+        });
+      });
+    }
+
+    function updateHero(featured) {
+      const m = featured[heroIndex];
+      renderHeroContent(m);
+      renderHeroIndicators(featured);
+      loadHeroBgVideo(m.trailerId);
+    }
+
+    function startHeroAutoplay(featured) {
+      heroTimer = setInterval(() => {
+        heroIndex = (heroIndex + 1) % featured.length;
+        updateHero(featured);
+      }, 8000);
+    }
+
+    function resetHeroAutoplay(featured) {
+      clearInterval(heroTimer);
+      startHeroAutoplay(featured);
+    }
+
+    // Pause autoplay on hover
+    const heroEl = $('#hero');
+    if (heroEl) {
+      heroEl.addEventListener('mouseenter', () => clearInterval(heroTimer));
+      heroEl.addEventListener('mouseleave', () => startHeroAutoplay(MOVIES.slice(0, 3)));
+    }
+
+    /* ================================================================
+     *  HERO YOUTUBE BACKGROUND
+     * ================================================================ */
+    function loadHeroBgVideo(videoId) {
+      const container = $('#heroYtContainer');
+      if (!container) return;
+      container.innerHTML = '';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&controls=0&loop=1&playlist=${videoId}&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
+      iframe.allow = 'autoplay; encrypted-media';
+      iframe.style.cssText = 'position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120vw;height:120vh;border:none;';
+      iframe.setAttribute('title', '背景预告片');
+      container.appendChild(iframe);
+    }
+
+    /* ================================================================
+     *  TRAILER MODAL — YouTube IFrame API
+     * ================================================================ */
+    function initYTApi() {
+      // Load YouTube IFrame API if not already loaded
+      if (document.getElementById('yt-api-script')) return;
+      const tag = document.createElement('script');
+      tag.id = 'yt-api-script';
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScript = document.getElementsByTagName('script')[0];
+      firstScript.parentNode.insertBefore(tag, firstScript);
+    }
+
+    // Called by YT API when ready
+    window.onYouTubeIframeAPIReady = function() {
+      // API loaded, player created on demand
+    };
+
+    window.openTrailer = function(videoId, title) {
+      isModalOpen = true;
+      document.body.style.overflow = 'hidden';
+      $('#modalTitle').textContent = title + ' — 预告片';
+      $('#trailerModal').classList.add('open');
+      $('#trailerLoading').classList.remove('hidden');
+      $('#ytPlayer').innerHTML = '';
+
+      // Create YT player
+      if (typeof YT !== 'undefined' && YT.Player) {
+        ytPlayer = new YT.Player('ytPlayer', {
+          videoId: videoId,
+          playerVars: { autoplay: 1, rel: 0, modestbranding: 1, origin: window.location.origin },
+          events: {
+            onReady: () => { $('#trailerLoading').classList.add('hidden'); $('#modalPlayPause').innerHTML = '<i class="fa-solid fa-pause text-sm"></i>'; },
+            onStateChange: (e) => {
+              if (e.data === YT.PlayerState.PLAYING) { $('#trailerLoading').classList.add('hidden'); }
+            },
+            onError: () => {
+              $('#trailerLoading').innerHTML = '<div class="flex flex-col items-center gap-3"><i class="fa-solid fa-triangle-exclamation text-4xl text-yellow-500"></i><span class="text-gray-300">预告片暂时无法加载，请稍后再试</span></div>';
+            }
+          }
+        });
+      } else {
+        // Fallback: use iframe directly
+        $('#ytPlayer').innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1" class="w-full h-full" allow="autoplay; encrypted-media" allowfullscreen title="预告片"></iframe>`;
+        $('#trailerLoading').classList.add('hidden');
+      }
+      // Focus trap
+      $('#trailerModal').focus();
+    };
+
+    window.closeTrailer = function() {
+      isModalOpen = false;
+      document.body.style.overflow = '';
+      $('#trailerModal').classList.remove('open');
+      if (ytPlayer && ytPlayer.stopVideo) ytPlayer.stopVideo();
+      setTimeout(() => { $('#ytPlayer').innerHTML = ''; ytPlayer = null; }, 400);
+    };
+
+    // Modal controls
+    function initModalControls() {
+      $('#trailerModal').addEventListener('click', (e) => {
+        if (e.target === $('#trailerModal')) closeTrailer();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isModalOpen) closeTrailer();
+      });
+
+      // Play/Pause
+      $('#modalPlayPause').addEventListener('click', () => {
+        if (!ytPlayer) return;
+        const btn = $('#modalPlayPause');
+        if (ytPlayer.getPlayerState() === YT.PlayerState.PLAYING) {
+          ytPlayer.pauseVideo();
+          btn.innerHTML = '<i class="fa-solid fa-play text-sm"></i>';
+        } else {
+          ytPlayer.playVideo();
+          btn.innerHTML = '<i class="fa-solid fa-pause text-sm"></i>';
+        }
+      });
+
+      // Volume
+      $('#modalVolume').addEventListener('input', function() {
+        if (ytPlayer && ytPlayer.setVolume) ytPlayer.setVolume(parseInt(this.value));
+      });
+
+      // Fullscreen
+      $('#modalFullscreen').addEventListener('click', () => {
+        const iframe = $('#ytPlayer').querySelector('iframe');
+        const el = iframe || $('#ytPlayer');
+        if (el.requestFullscreen) el.requestFullscreen();
+        else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      });
+    }
+
+    /* ================================================================
+     *  INIT
+     * ================================================================ */
+    function init() {
+      initTheme();
+      initNavScroll();
+      initMobileMenu();
+      initSearch();
+      initFilters();
+      initHero();
+      initInfiniteScroll();
+      initYTApi();
+      initModalControls();
+      renderMovies();
+    }
+
+    // Boot when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+
+  <!--
+  ============================================================
+   🎬 MovieHub — 电影预告片展示网站
+  ============================================================
+
+  📦 技术栈
+    · Tailwind CSS v3 (CDN)
+    · Font Awesome 6 (CDN)
+    · Google Fonts: Inter
+    · YouTube IFrame API
+    · 原生 JavaScript (无框架依赖)
+
+  🎯 核心功能
+    ✅ 深色/浅色主题切换 (localStorage 持久化)
+    ✅ 玻璃拟态导航栏 (滚动渐显)
+    ✅ Hero 区轮播 (YouTube 静音背景视频 + 自动/手动切换)
+    ✅ 类型筛选 (动作/科幻/喜剧/恐怖/剧情/动画)
+    ✅ 时间筛选 (本周/本月/即将上映)
+    ✅ 电影搜索 (标题/类型/导演)
+    ✅ 响应式卡片网格 (2→5 列自适应)
+    ✅ 预告片模态框 (YouTube 播放器 + 播放控制)
+    ✅ 无限滚动加载 (Intersection Observer)
+    ✅ 骨架屏加载状态
+    ✅ 完整的键盘导航 & ARIA 无障碍支持
+    ✅ prefers-reduced-motion 适配
+
+  🔧 如何添加新电影
+    在 MOVIES 数组中添加新对象，格式如下：
+
+    {
+      id: 19,                              // 唯一 ID
+      title: '电影名称',                    // 中文名
+      titleEn: 'Movie Title',              // 英文名
+      year: 2026,                          // 年份
+      rating: 8.5,                         // 评分
+      ratingSite: 'IMDb',                  // 评分来源
+      genres: ['动作', '科幻'],            // 类型数组
+      duration: '120分钟',                  // 片长
+      director: '导演名',                   // 导演
+      description: '剧情简介...',           // 简介 (1-2 句)
+      posterColor: 'linear-gradient(135deg, #1a3a5c, #2d6bc4)',  // 海报渐变色
+      posterEmoji: '🎬',                    // 海报占位表情
+      trailerId: 'YOUTUBE_VIDEO_ID',       // YouTube 视频 ID (替换真实 ID)
+      releaseDate: '2026-08-15',           // 上映日期 (YYYY-MM-DD)
+      isUpcoming: true,                    // 是否即将上映
+    }
+
+  🎨 如何修改配色
+    · 品牌色: 搜索 #FF4D4D → 全局替换
+    · 深色背景: 搜索 #0a0a0f / navy 色值
+    · Tailwind 配置: 见 <script> 中 tailwind.config
+
+  📝 关于 YouTube 预告片 ID
+    trailerId 是 YouTube 视频 URL 中 v= 后面的部分
+    例如: https://www.youtube.com/watch?v=b3XGCjU_y7o → "b3XGCjU_y7o"
+    请确保替换为你自己的真实视频 ID
+
+  🌐 部署方式
+    单个 HTML 文件，可直接用任何静态服务器托管
+    例如: npx serve . / python -m http.server / Netlify / Vercel
+
+  ============================================================
+  -->
+</body>
+</html>
