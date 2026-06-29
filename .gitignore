@@ -20,9 +20,19 @@ __pycache__/
 *.pyc
 *.pyo
 
-# 环境变量
+# 环境变量与密钥
 .env
 .env.local
+kaoyan/kaoyan_config.json
+
+# 考研脚本运行时数据（含日志/缓存/报告）
+kaoyan/kaoyan_cache.json
+kaoyan/kaoyan_history.json
+kaoyan/kaoyan_daily.log
+kaoyan/reports/
+
+# 飞书授权文件
+tools/feishu_auth_qr.png
 
 # 系统文件
 Thumbs.db

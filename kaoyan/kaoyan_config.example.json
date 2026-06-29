@@ -1,0 +1,49 @@
+{
+  "deepseek_api_key": "your-deepseek-api-key",
+  "deepseek_base_url": "https://api.deepseek.com",
+  "deepseek_model": "deepseek-chat",
+  "feishu_webhook_url": "your-feishu-webhook-url",
+  "feishu_app_id": "",
+  "feishu_app_secret": "",
+  "feishu_bitable_app_token": "",
+  "feishu_bitable_table_id": "",
+  "proxy": {
+    "enabled": false,
+    "http": "socks5://127.0.0.1:1080",
+    "https": "socks5://127.0.0.1:1080"
+  },
+  "scoring_weights": {
+    "topic_match": 0.20,
+    "logic_complexity": 0.20,
+    "language_difficulty": 0.15,
+    "exam_potential": 0.25,
+    "exam_similarity": 0.20
+  },
+  "target_sources": [
+    "The Economist",
+    "The Atlantic",
+    "Scientific American",
+    "Nature",
+    "The Guardian",
+    "The New York Times",
+    "The Washington Post",
+    "The Wall Street Journal",
+    "Time",
+    "The Christian Science Monitor",
+    "The Times"
+  ],
+  "search_topics": [
+    "artificial intelligence",
+    "technology ethics",
+    "education reform",
+    "psychology research",
+    "behavioral science",
+    "economics policy",
+    "business strategy",
+    "environmental protection",
+    "social change",
+    "scientific discovery",
+    "public policy",
+    "culture society"
+  ]
+}
