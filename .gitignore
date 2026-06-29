@@ -1,0 +1,28 @@
+# 依赖
+node_modules/
+
+# 构建产物
+dist-electron/
+*.msi
+
+# Claude Code 内部
+.cc-connect/
+
+# Skill 源码（全局安装的副本）
+skills/
+
+# 临时文件
+tmp/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 环境变量
+.env
+.env.local
+
+# 系统文件
+Thumbs.db
+.DS_Store

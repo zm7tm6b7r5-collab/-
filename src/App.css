@@ -1,0 +1,125 @@
+:root {
+  --color-work: #e74c3c;
+  --color-break: #2ecc71;
+  --color-bg: #1a1a2e;
+  --color-surface: #16213e;
+  --color-text: #eee;
+  --color-text-dim: #888;
+  --ring-bg: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+  user-select: none;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 32px;
+}
+
+/* TimerDisplay */
+.timer-display {
+  display: flex;
+  justify-content: center;
+}
+
+.ring-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.timer-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.timer-mode {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.timer-time {
+  font-size: 56px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-status {
+  font-size: 12px;
+  color: var(--color-text-dim);
+  height: 16px;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 32px;
+  border-radius: 24px;
+  transition: transform 0.15s, opacity 0.15s;
+  letter-spacing: 1px;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn-start {
+  background: var(--color-work);
+  color: #fff;
+}
+
+.btn-pause {
+  background: #f39c12;
+  color: #fff;
+}
+
+.btn-reset {
+  background: transparent;
+  color: var(--color-text-dim);
+  border: 1px solid var(--color-text-dim);
+}

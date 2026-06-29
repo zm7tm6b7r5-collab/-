@@ -1,0 +1,25 @@
+{
+  "name": "pomodoro-timer",
+  "version": "1.0.0",
+  "description": "A minimal desktop Pomodoro timer",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "electron": "^42.3.0",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "vite": "^8.0.14",
+    "vite-plugin-electron": "^0.29.1"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}
