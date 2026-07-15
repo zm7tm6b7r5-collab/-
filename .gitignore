@@ -5,6 +5,11 @@ node_modules/
 dist-electron/
 *.msi
 
+# 大二进制文件（PPT/图片/Word 不应直接追踪，用 Git LFS 或外部存储）
+*.pptx
+*.png
+*.docx
+
 # Claude Code 内部
 .cc-connect/
 .claude/
