@@ -1,0 +1,182 @@
+# 用户画像与考试参数
+# 本文件由 Research Agent 读取，确保所有建议基于实际情况
+# 最后更新：2026-07-15
+
+# ============================================================
+# 用户基础信息
+# ============================================================
+user:
+  name: "zm"
+  education:
+    current: "跨境电商专业大三"
+    school: "[待补充]"
+    expected_graduation: "2027-06"
+  target:
+    school: "南京大学"
+    college: "社会学院"
+    major: "社会学"
+    degree: "学术型硕士"
+    campus: "[待补充：鼓楼/仙林/浦口]"
+
+# ============================================================
+# 考试信息
+# ============================================================
+exam:
+  # 初试科目
+  subjects:
+    - code: "101"
+      name: "思想政治理论"
+      score: 100
+    - code: "201"
+      name: "英语（一）"
+      score: 100
+    - code: "614"
+      name: "社会学理论"
+      score: 150
+    - code: "837"
+      name: "社会学方法"
+      score: 150
+  total_score: 500
+
+  # 关键日期
+  dates:
+    application_month: "10月"  # 网上报名
+    confirmation_month: "11月"  # 现场确认
+    exam_date: "2026-12-26"  # [待确认：通常在12月最后一个周末]
+    score_release: "2027-02"  # [预估]
+    re_exam: "2027-03"  # [预估]
+
+  # 目标分数 [待与用户确认]
+  target_score:
+    politics: 70
+    english: 70
+    theory_614: 120
+    method_837: 120
+    total: 380
+
+# ============================================================
+# 专业基础评估
+# ============================================================
+foundation:
+  background: "跨专业"  # 跨境电商 → 社会学
+  sociology_courses_taken:
+    - "[待补充：是否修过社会学概论/社会学理论/社会研究方法等课程？]"
+  self_study_progress:
+    - "[待补充：已经自学了哪些教材？读到什么程度？]"
+  math_stats_level: "有一定基础"  # 跨境电商涉及数据分析，Stata 学习曲线较缓
+  english_level: "能读英文文献但速度不快"
+  previous_exam_attempt: false  # [待确认：是否一战？]
+  notes_existing:
+    obsidian_vault: "C:\\Users\\AUSU\\Desktop\\llmwiki"
+    sociology_notes_count: 155  # ~155 页社会学笔记
+    notes_quality: "[待评估：需扫描 vault 中社会学笔记的覆盖度和质量]"
+
+# ============================================================
+# 可用时间
+# ============================================================
+time_budget:
+  days_until_exam: "[自动计算]"
+  daily_available:
+    weekday: "[待补充] 小时"
+    weekend: "[待补充] 小时"
+    holiday: "[待补充] 小时"
+  constraints:
+    - "大三下学期可能有课程/考试"
+    - "大四上学期可能有实习/毕业论文开题"
+    - "[待补充]"
+
+# ============================================================
+# 已有资料
+# ============================================================
+resources:
+  textbooks:
+    theory_614:
+      - title: "西方社会学历史与体系"
+        author: "周晓虹"
+        owned: "[待确认]"
+      - title: "西方社会学理论教程"
+        author: "侯钧生"
+        owned: "[待确认]"
+      - title: "社会学理论的结构"
+        author: "郑作彧（译）"
+        owned: "[待确认]"
+    method_837:
+      - title: "社会研究方法"
+        author: "风笑天"
+        owned: "[待确认]"
+      - title: "社会统计学"
+        author: "陈云松等"
+        owned: "[待确认]"
+      - title: "Stata统计分析与应用"
+        author: "贺光烨"
+        owned: "[待确认]"
+
+  digital:
+    - type: "考纲文件"
+      path: "cc/南大社会学考研参考书目与考纲.md"
+    - type: "Obsidian笔记"
+      path: "C:\\Users\\AUSU\\Desktop\\llmwiki"
+      sociology_pages: 155
+    - type: "真题"
+      status: "[待确认：已有哪些年份的真题？PDF/纸质？]"
+    - type: "学长笔记/资料"
+      status: "[待补充]"
+
+# ============================================================
+# AI 工具配置
+# ============================================================
+ai_tools:
+  claude_code:
+    installed: true
+    skills:
+      - "exam-review"
+      - "paper-writing-workflow"
+      - "think-tank-training"
+      - "deep-research"
+      - "cnki-search / cnki-advanced-search / cnki-paper-detail"
+      - "literature-review"
+      - "knowledge-gap-scanner"
+      - "obsidian-vault"
+      - "markitdown"
+  deepseek:
+    usage: "kaoyan_daily.py 评分+分析用 deepseek-chat"
+    api_configured: true
+  anki:
+    installed: true
+    note_types: "APF: Simple / MathConcept / MathProblem / MathPool"
+    deck: "Learning"
+  obsidian:
+    vault_path: "C:\\Users\\AUSU\\Desktop\\llmwiki"
+    daily_note: "[待确认]"
+  feishu:
+    connected: true
+    usage: "kaoyan_daily.py 推送英语外刊到飞书群"
+
+# ============================================================
+# 学习偏好
+# ============================================================
+preferences:
+  style: "引导式推进——先给计划，确认后再执行"
+  pace: "详细解释每一步，不跳步骤"
+  decision: "关键节点主动确认，不确定时多问一个澄清问题"
+  output: "表格优先（信息对比），结构化报告次之"
+  learning_mode: "操作同时解释为什么这样做"
+  weaknesses:
+    - "[待补充：自认为社会学哪些模块最弱？]"
+  strengths:
+    - "[待补充：哪些模块相对有把握？]"
+
+# ============================================================
+# 信息缺口汇总
+# ============================================================
+missing_info:
+  critical:  # 必须补充才能制定计划
+    - "每天可用学习时间（工作日/周末分别几小时）"
+    - "已有真题的年份范围"
+    - "是否一战"
+    - "已自学进度（读过哪些教材/到什么程度）"
+  nice_to_have:  # 有更好，没有也能做
+    - "目标总分（默认 380）"
+    - "目标校区"
+    - "导师偏好（如有）"
+    - "自认为的强弱模块"
