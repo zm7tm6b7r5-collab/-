@@ -1,0 +1,23 @@
+# ===== Conventional Commits 格式 =====
+# <type>: <简短描述>
+#
+# [可选正文，详细说明做了什么和为什么]
+#
+# [可选脚注，如 BREAKING CHANGE 或关联 issue]
+#
+# ===== type 类型 =====
+# feat:     新功能
+# fix:      修复 bug
+# docs:     文档变更
+# style:    格式调整（不影响代码运行）
+# refactor: 重构（不增功能也不修 bug）
+# perf:     性能优化
+# test:     测试相关
+# chore:    杂务（依赖更新、构建脚本、清理文件等）
+# ci:       CI/CD 变更
+#
+# ===== 示例 =====
+# feat: 社会学考研 Research Agent 项目初始化
+# fix: 修复 kaoyan_daily.py 选题权重计算错误
+# docs: 更新 CLAUDE.md 文件地图
+# chore: 清理 docs 目录废弃文件
