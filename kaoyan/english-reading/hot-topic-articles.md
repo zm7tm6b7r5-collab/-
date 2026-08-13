@@ -6,7 +6,7 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-13《A deepfake can ruin you before breakfast》（热点3，经济科技）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **轮换状态**：上次精读 = 2026-08-14《One week off social media: Would an Australia-style ban work?》（热点6，社会生活）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
 
@@ -78,6 +78,7 @@
 | Adolescent social media restrictions may reduce some harms while shifting others | BMJ Group | 2026-07-15 | https://bmjgroup.com/adolescent-social-media-restrictions-may-reduce-some-harms-while-shifting-others-warn-experts/ | 专家警告：禁令可能转移而非消除危害，辩证视角 | 已精读（2026-08-09） |
 | Ban teens from social media? Ask first. | The Christian Science Monitor（社论） | 2026-03-26 | https://www.csmonitor.com/Editorials/the-monitors-view/2026/0326/Ban-teens-from-social-media-Ask-first | 一级来源：社论建议先做对照实验再立法，观点鲜明，适合态度题训练（预测角度：禁令争议；得分 33/35） | 待验证（CSM 代理超时） |
 | UK social media ban: Questions remain on how it will work | BBC News | 2026-06-14 | https://www.bbc.com/news/articles/cddl65dp0rdo | 一级来源：英国禁令执行细节存疑（年龄验证/平台责任/豁免），新闻分析体（预测角度：禁令执行细节；得分 31/35） | 待验证（BBC 代理打不开） |
+| One week off social media: Would an Australia-style ban work? | RTÉ News（Prime Time 栏目） | 2026-03-05 | https://www.rte.ie/news/primetime/2026/0305/1561692-social-media-ban/ | 国家台报道（暂归二级）：五名青少年一周戒网实验 + 爱尔兰数字钱包年龄验证方案 + 371 名学者反对，正反证据完整（预测角度：禁令执行与副作用；得分 29/35） | 已精读（2026-08-14） |
 
 ## 7. 绿色转型与个人选择（概率 75%）
 
@@ -120,6 +121,13 @@
 | Women in tech and finance at higher risk from AI job losses, report says | The Guardian | 2026-02-04 | https://www.theguardian.com/business/2026/feb/04/women-tech-finance-higher-risk-ai-job-losses-report | 一级来源：女性在科技与金融业面临更高 AI 失业风险，约 11.9 万文职岗受冲击，AI×性别就业直接命中（预测角度：AI×性别就业风险；得分 30/35） | 待验证（Guardian 代理不可读，需用户确认） |
 | Women in developing countries hardest hit by rising debt burden, UN research finds | The Guardian | 2026-05-04 | https://www.theguardian.com/world/2026/may/04/women-in-developing-countries-hardest-hit-by-rising-debt-burden-un-research-finds | 一级来源：债务与紧缩下女性更易失业并承担更多无偿照料，直击 unpaid care work 热词（预测角度：无偿照料/女性劳动参与；得分 30/35） | 待验证（Guardian 代理不可读，需用户确认） |
 
+## 11. AI 伴侣与情感依赖（概率 85%）
+
+| 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
+|------|------|------|------|---------|------|
+| Friendship, on Demand | The Atlantic | 2026-03-17 | https://www.theatlantic.com/family/2026/03/ai-friendship-chatbot/686345/ | 一级来源：AI 陪伴缓解孤独的初步证据 vs "治标不治本/可能更糟"之争，正反论证完整（预测角度：AI 陪伴与孤独；得分 33/35；搜索返回 gift 链接可试读） | 待验证（Atlantic 代理不可读，需用户确认） |
+| The AI Companies Trying to Make Grief Obsolete | The Atlantic | 2026-02-01 | https://www.theatlantic.com/ideas/2026/02/deadbots-ai-grief-obsolete/685811/ | 一级来源：AI"复活"逝者服务的商业动机与伦理争议，直击 digital grief（预测角度：数字哀悼；得分 32/35） | 待验证（Atlantic 代理不可读，需用户确认） |
+
 ---
 
 ## 维护记录
@@ -148,3 +156,4 @@
 | 2026-08-11 | 定时任务运行：深度调研热点 8（科技巨头监管），新增 AP 特朗普 vs 欧盟篇（29/35）与 RTÉ 欧盟法院驳回谷歌上诉篇（28/35），均已验证全文可读；AP/RTÉ 不在分级表，按"风格契合"暂归二级备选并在推荐理由注明；今日按 §7.6 无人确认兜底，精读 SciAm《Anthropic asks...》（热点3，35/35，代理可读，经济科技，与 8-10 社会生活轮换）；报告存 archive/2026-08-11.md；候选清单（含 FT 33/35 等一级来源）已随推送请用户本机确认 |
 | 2026-08-12 | 定时任务运行：深度调研热点 9（城市化与住房可负担性），新增 SciAm 公有地出售篇（33/35，已精读）与 CSM 佛罗里达住房篇（29/35，待验证），并将库内 Magzter 篇升级为 Guardian 原版链接（31/35）；为进入候选的 Guardian 社媒 2 篇补分（33/35、30/35）；今日按 §7.6 无人确认兜底精读 SciAm 篇（代理可读，社会生活，与 8-11 经济科技轮换）；报告存 archive/2026-08-12.md；候选清单（Guardian/CSM/BBC 一级来源）随推送请用户本机确认 |
 | 2026-08-13 | 定时任务运行：深度调研热点 10（性别平等与就业鸿沟），新增 Guardian 女性科技金融 AI 失业风险篇（30/35）与 Guardian 女性债务/无偿照料篇（30/35），均待用户确认；今日按 §7.6 无人确认兜底精读 SciAm《A deepfake can ruin you before breakfast》（热点3，33/35，代理可读，经济科技，与 8-12 社会生活轮换）；报告存 archive/2026-08-13.md（含 §10 原文全文附录）；候选清单（FT/Atlantic 一级来源）随推送请用户本机确认 |
+| 2026-08-14 | 定时任务运行：深度调研热点 11（AI 伴侣与情感依赖），新建热点 11 区段，新增 Atlantic《Friendship, on Demand》（33/35）与 Atlantic《The AI Companies Trying to Make Grief Obsolete》（32/35），均待用户确认；今日按 §7.6 无人确认兜底精读 RTÉ《One week off social media...》（热点6，29/35，代理可读，社会生活，与 8-13 经济科技轮换），该篇入库并标已精读；报告存 archive/2026-08-14.md（含 §10 原文全文附录）；候选清单（Guardian/Atlantic/CSM 一级来源）随推送请用户本机确认 |
