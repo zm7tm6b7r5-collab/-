@@ -6,7 +6,7 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-14《One week off social media: Would an Australia-style ban work?》（热点6，社会生活）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
+> **轮换状态**：上次精读 = 2026-08-16《Trump says the US will investigate EU trade practices, claiming the bloc unfairly fined tech giants》（热点8，经济科技）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
 
@@ -97,7 +97,7 @@
 | Antitrust in the technology sector | Financier Worldwide | 2026 更新 | https://www.financierworldwide.com/briefing-room-antitrust-in-the-technology-sector | 欧盟 DMA 执法全景：Apple 5 亿欧、Meta 2 亿欧罚款，背景资料 | 未读 |
 | Google fined €890m by EU for favouring its own apps over rivals | BBC News | 2026-07-22 | 原版：https://www.bbc.com/news/articles/cevmenngkzpo ／ 可读转载（RTÉ）：https://www.rte.ie/news/business/2026/0723/1584780-google-hit-with-1-billion-eu-fine/ | 一级来源：欧盟对 Google 罚款 8.9 亿欧元，DMA 双罚单+谷歌回应+欧盟表态，执法最新案例（预测角度：反垄断执法；得分 30/35） | 原版待验证；RTÉ 转载版已验证可读 |
 | Google appeals landmark antitrust verdict over search monopoly | BBC News | 2026-01-16 | https://www.bbc.com/news/articles/clyn0ek5rdpo | 一级来源：谷歌上诉搜索垄断判决，反垄断标志性案件最新进展（预测角度：反垄断标志案；得分 28/35） | 待验证（BBC 代理打不开） |
-| Trump says the US will investigate EU trade practices, claiming the bloc unfairly fined tech giants | AP News | 2026-07-23 | https://apnews.com/article/trump-eu-trade-tech-fine-google-2e125ac0d3c1ac7a96c9194a372ba47e | 通讯社分析稿（不在分级表，按风格暂归二级备选）：特朗普宣布正式调查欧盟贸易行为，围绕 Google €890m DMA 双罚单展开美欧双向立场，含 gatekeepers 概念（预测角度：反垄断执法/美欧监管博弈；得分 29/35） | 未读（已验证全文可读） |
+| Trump says the US will investigate EU trade practices, claiming the bloc unfairly fined tech giants | AP News | 2026-07-23 | https://apnews.com/article/trump-eu-trade-tech-fine-google-2e125ac0d3c1ac7a96c9194a372ba47e | 通讯社分析稿（不在分级表，按风格暂归二级备选）：特朗普宣布正式调查欧盟贸易行为，围绕 Google €890m DMA 双罚单展开美欧双向立场，含 gatekeepers 概念（预测角度：反垄断执法/美欧监管博弈；得分 29/35） | 已精读（2026-08-16） |
 | EU top court dismisses Google fight against record €4.1 billion EU fine | RTÉ News | 2026-07-02 | https://www.rte.ie/news/business/2026/0702/1581379-googles-eu-fine/ | 国家台新闻分析（不在分级表，按风格暂归二级备选）：欧盟法院终审驳回谷歌 Android 反垄断 €4.1bn 罚单上诉，终局判例+谷歌回应+累计 €11bn 罚款（预测角度：反垄断判决与执法；得分 28/35） | 未读（已验证全文可读） |
 
 > 背景补充：Google 搜索垄断案 2025-09-02 美法院发布补救裁决（拒绝强制出售 Chrome/Android），是近一年反垄断最大事件，命题素材常以"监管 vs 创新"角度出现。
@@ -130,6 +130,16 @@
 
 ---
 
+## 12. 公共卫生与医疗体系（概率 70%）
+
+| 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
+|------|------|------|------|---------|------|
+| Dangerous microbes may be hiding in drought-stricken soils | Scientific American | 2026-03-23 | https://www.scientificamerican.com/article/dangerous-microbes-may-be-hiding-in-drought-stricken-soils/ | 一级来源：干旱会促进土壤细菌产生抗生素耐药性，气候×公共卫生交叉、机制解释清楚（预测角度：极端天气与健康风险；得分 31/35） | 待验证（代理 403，需用户本机确认） |
+| NHS anaesthetist shortage prevents 1.5m operations a year, report finds | The Guardian | 2026-07-11 | https://www.theguardian.com/society/2026/jul/11/nhs-anaesthetist-shortage-prevents-operations | 一级来源：麻醉师短缺致 NHS 每年 150 万例手术无法进行，候诊名单 800 万+，医疗资源短缺的实证报道（预测角度：医疗体系压力与民生；得分 31/35） | 待验证（Guardian 代理不可读，需用户确认） |
+| Climate crisis is accelerating antibiotic resistance across world, study says | The Guardian | 2026-05-26 | https://www.theguardian.com/society/2026/may/26/climate-crisis-accelerating-antibiotic-resistance-across-world-salmonella-study | 一级来源：1940–2023 年沙门氏菌耐药基因随气候变暖上升 10%，气候×抗生素耐药的大数据关联研究（预测角度：气候与健康风险；得分 30/35） | 待验证（Guardian 代理不可读，需用户确认） |
+
+---
+
 ## 维护记录
 
 | 日期 | 操作 |
@@ -157,3 +167,4 @@
 | 2026-08-12 | 定时任务运行：深度调研热点 9（城市化与住房可负担性），新增 SciAm 公有地出售篇（33/35，已精读）与 CSM 佛罗里达住房篇（29/35，待验证），并将库内 Magzter 篇升级为 Guardian 原版链接（31/35）；为进入候选的 Guardian 社媒 2 篇补分（33/35、30/35）；今日按 §7.6 无人确认兜底精读 SciAm 篇（代理可读，社会生活，与 8-11 经济科技轮换）；报告存 archive/2026-08-12.md；候选清单（Guardian/CSM/BBC 一级来源）随推送请用户本机确认 |
 | 2026-08-13 | 定时任务运行：深度调研热点 10（性别平等与就业鸿沟），新增 Guardian 女性科技金融 AI 失业风险篇（30/35）与 Guardian 女性债务/无偿照料篇（30/35），均待用户确认；今日按 §7.6 无人确认兜底精读 SciAm《A deepfake can ruin you before breakfast》（热点3，33/35，代理可读，经济科技，与 8-12 社会生活轮换）；报告存 archive/2026-08-13.md（含 §10 原文全文附录）；候选清单（FT/Atlantic 一级来源）随推送请用户本机确认 |
 | 2026-08-14 | 定时任务运行：深度调研热点 11（AI 伴侣与情感依赖），新建热点 11 区段，新增 Atlantic《Friendship, on Demand》（33/35）与 Atlantic《The AI Companies Trying to Make Grief Obsolete》（32/35），均待用户确认；今日按 §7.6 无人确认兜底精读 RTÉ《One week off social media...》（热点6，29/35，代理可读，社会生活，与 8-13 经济科技轮换），该篇入库并标已精读；报告存 archive/2026-08-14.md（含 §10 原文全文附录）；候选清单（Guardian/Atlantic/CSM 一级来源）随推送请用户本机确认 |
+| 2026-08-16 | 定时任务运行：深度调研热点 12（公共卫生与医疗体系），新建库区段并新增 3 篇——SciAm 干旱土壤耐药菌（31/35）、Guardian NHS 麻醉师短缺（31/35）、Guardian 气候×耐药（30/35），均代理不可读标"待验证"；8-15 自动化未触发无报告；今日按 §7.6 无人确认兜底，精读 AP《Trump says the US will investigate EU trade practices》（热点8，29/35，经济科技，与 8-14 社会生活轮换）；报告存 archive/2026-08-16.md（含 §10 原文全文附录）；候选清单随推送请用户本机确认 |
