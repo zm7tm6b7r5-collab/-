@@ -98,17 +98,18 @@
 4. 按 7.3 给**每个候选**打分（不得跳过），并把"预测角度 + 得分（X/35）"写入该条推荐理由；
 5. 选题：按 7.6 生成候选清单（命题概率 + 得分排序，不看代理可读性）→ 用户确认可读 → 精读；无人确认时回退"代理可读"的最高分候选。
 
-### 7.5 代理打不开时的替代渠道（按顺序尝试，2026-08-10 验证；2026-08-17 增补 gift 链接优先）
+### 7.5 代理打不开时的替代渠道（按顺序尝试，2026-08-10 验证；2026-08-17 增补 gift 链接优先与 Flipboard 镜像）
 
 > 原因：抓取服务（代理）的 IP 段常被网站反爬系统拦截（返回 403/超时/SSRF_BLOCKED），或受付费墙、地区限制影响；**这不代表文章打不开**——用户本机浏览器通常可以正常访问。
 
 1. **官方 gift 分享链接（2026-08-17 起首发尝试）**：部分付费媒体（如 The Atlantic）通过官方"赠阅"链接让非订阅者免费读单篇——**无需登录、不占用户免费额度**。适用前提：代理对原站整体拦截（如 Atlantic 返回 PROXY_ERROR）时先走此步。操作：检索 `site:媒体域名 + "原标题" + gift`，优先采用带 `?gift=` 参数的原站链接；每次给出 **2 条备用**（gift 链接有免费阅读次数上限，一条失效换另一条），随候选推送，用户本机打开后提供全文。检索例：Atlantic《Friendship, on Demand》两条 gift 链接（2026-08-16 检索可得），但该篇 2026-08-17 用户确认实际不可读，机制保留、示例待后续验证。
 2. **转载/通讯社版（最有效）**：BBC、FT、Guardian 等的一手新闻常被 Al Jazeera、RTÉ、Helsinki Times、CBC、新华社英文等全文转载。按原标题检索（如 `"Google fined €890m"`），验证后把可读替代链接标注在该条记录中，原版链接保留，状态注明"原版待验证 / 转载版可读"。已验证例：BBC《Google fined €890m》→ [RTÉ 同题转载可读](https://www.rte.ie/news/business/2026/0723/1584780-google-hit-with-1-billion-eu-fine/)。
-3. **原站 RSS / 新闻聚合**：BBC/FT/经济学人有官方 RSS；Google News、Flipboard（CSM 常经 Flipboard 分发）可搜到正文。
-4. **用户本机直连**：把链接发给用户，用浏览器打开（多数网站对本机网络正常，付费墙除外）。
-5. **Wayback Machine 等存档站**：`web.archive.org/web/原链接`；当前环境对 archive.org 也拦截时，由用户本机访问。
-6. **双语精读公众号**：如"考研英语精选外刊""LearnAndRecord"常搬运同源文章，可作精读参考，但收录仍以原文链接为准。
-7. 以上都无法获得全文：维持"待验证"，如实记录，**不编造内容**。
+3. **Flipboard 镜像页（2026-08-17 起验证）**：部分媒体（已验证 The Atlantic，CSM 亦常经 Flipboard 分发）的文章在 Flipboard 上的 story 页常展示全文或大段正文，通常无需登录。适用：原站被代理拦截/付费墙、gift 链接失效、常规转载搜不到时。发现方式：检索 `site:flipboard.com + "原标题"`（或 `"原标题" flipboard`），取 `/topic/.../a--_...` 形 story 链接；代理访问 flipboard.com 常被挡（FETCH_TIMEOUT/PROXY_ERROR），需用户本机打开确认全文后提供。已验证例：Atlantic《Friendship, on Demand》→ [Flipboard story 页](https://flipboard.com/topic/human/friendship-on-demand/a--_Cl5guQRT-a9BvLqJhCCg%3Aa%3A3199527-62ee2fb78d%2Ftheatlantic.com)（2026-08-17 用户确认全文可读）。注意：部分文章镜像页仅显示摘录，须逐篇确认；精读来源仍标注原刊（如 The Atlantic），镜像只作取文渠道。
+4. **原站 RSS / 新闻聚合**：BBC/FT/经济学人有官方 RSS；Google News、Flipboard 可搜到正文。
+5. **用户本机直连**：把链接发给用户，用浏览器打开（多数网站对本机网络正常，付费墙除外）。
+6. **Wayback Machine 等存档站**：`web.archive.org/web/原链接`；当前环境对 archive.org 也拦截时，由用户本机访问。
+7. **双语精读公众号**：如"考研英语精选外刊""LearnAndRecord"常搬运同源文章，可作精读参考，但收录仍以原文链接为准。
+8. 以上都无法获得全文：维持"待验证"，如实记录，**不编造内容**。
 
 **转载版的使用规则**：转载版全文可读时，该条在选题中视为"可读"参与打分与精读（来源标注为"转载：XX"），但推荐理由中同时保留原版链接与转载链接。
 
@@ -152,7 +153,8 @@
 | 新华社英文 / People's Daily English / china.org.cn | ✅ 代理可读 | 权威背景（三级） |
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
-| The Atlantic | ❌ 需逐篇确认（2026-08-17 起） | 8-16 用户曾确认《Friendship, on Demand》可读，8-17 更正为实际不可读（剔除候选）；Atlantic 全部篇目需逐篇确认 |
+| The Atlantic | ❌ 需逐篇确认（2026-08-17 起） | 8-16 用户曾确认《Friendship, on Demand》可读，8-17 更正为原站实际不可读（剔除候选）；8-17 已通过 Flipboard 镜像获得全文；Atlantic 全部篇目需逐篇确认 |
+| Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读（正文待提供后精读）；代理访问 flipboard.com 被挡（FETCH_TIMEOUT/PROXY_ERROR），需用户本机打开；部分文章仅显示摘录，须逐篇确认 |
 | The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
 | Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
