@@ -145,13 +145,14 @@
 
 | 来源/渠道 | 状态（2026-08-10 实测） | 备注 |
 |-----------|------------------------|------|
-| Scientific American | ✅ 代理可读 | 稳定可读（2026-08-16 实测：干旱土壤耐药菌单篇返回 403，该篇需用户本机确认） |
+| Scientific American | ❌ 需用户确认（2026-08-17 起） | 2026-08-17 实测整站 403（含 8-12 曾可读篇目）；8-16 用户已确认干旱土壤耐药菌篇本机可读 |
 | RTÉ（含转载 BBC/Reuters 同题） | ✅ 代理可读 | 转载版全文可读 |
 | Associated Press（AP News） | ✅ 代理可读（2026-08-11 实测单篇） | 通讯社分析稿，不在分级表，按风格暂归二级备选 |
 | 新华社英文 / People's Daily English / china.org.cn | ✅ 代理可读 | 权威背景（三级） |
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
-| Guardian / Economist / FT / Nature / BBC / Atlantic / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
+| The Atlantic | ✅ 用户确认可读（2026-08-16） | 用户本机已验证《Friendship, on Demand》全文可读，待补全文；其余 Atlantic 篇目仍需逐篇确认 |
+| Guardian / Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
 
 **使用方式**：候选生成时按本表备注"代理可读 / 需用户确认"；用户确认某来源可读后，把该来源状态更新为"✅ 用户确认可读"并注明日期。
