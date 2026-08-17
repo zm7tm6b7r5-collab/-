@@ -144,9 +144,9 @@
 
 | 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
 |------|------|------|------|---------|------|
-| Precise genome editing of human embryos triggers praise and alarm | Nature | 2026-06-04 | https://www.nature.com/articles/d41586-026-01827-8 | 一级来源：人胚胎碱基编辑（base editing）成功，科学家与生物伦理学家"赞誉与警觉"并存，正反论证完整（预测角度：基因编辑伦理；得分 34/35） | 待验证（Nature 代理不可读，需用户确认） |
-| Experts call human-embryo-editing study a 'gateway' to ethically questionable uses | Scientific American | 2026-06-10 | https://www.scientificamerican.com/article/report-of-gene-edited-human-embryos-sparks-worries-about-the-technologys-future-uses/ | 一级来源：胚胎编辑研究被指为"通向可疑用途的门径"，直击人类增强与滑坡效应之争（预测角度：基因编辑伦理/滑坡谬误；得分 34/35） | 待验证（代理 403，需用户本机确认） |
-| The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones | The Guardian | 2026-07-05 | https://www.theguardian.com/commentisfree/2026/jul/05/the-guardian-view-on-gene-edited-humans-darker-uses-must-be-acknowledged-alongside-medical-ones | 一级来源社论：公众支持基因编辑但须正视"黑暗用途"，伦理讨论从"安全与否"走向"用途与边界"（预测角度：基因编辑伦理/人类增强；得分 34/35） | 待验证（Guardian 代理不可读，需用户确认） |
+| Precise genome editing of human embryos triggers praise and alarm | Nature | 2026-06-04 | https://www.nature.com/articles/d41586-026-01827-8 | 一级来源：人胚胎碱基编辑（base editing）成功，科学家与生物伦理学家"赞誉与警觉"并存，正反论证完整（预测角度：基因编辑伦理；得分 34/35） | 用户确认不可读（2026-08-17），剔除候选 |
+| Experts call human-embryo-editing study a 'gateway' to ethically questionable uses | Scientific American | 2026-06-10 | https://www.scientificamerican.com/article/report-of-gene-edited-human-embryos-sparks-worries-about-the-technologys-future-uses/ | 一级来源：胚胎编辑研究被指为"通向可疑用途的门径"，直击人类增强与滑坡效应之争（预测角度：基因编辑伦理/滑坡谬误；得分 34/35） | 用户确认不可读（2026-08-17），剔除候选 |
+| The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones | The Guardian | 2026-07-05 | https://www.theguardian.com/commentisfree/2026/jul/05/the-guardian-view-on-gene-edited-humans-darker-uses-must-be-acknowledged-alongside-medical-ones | 一级来源社论：公众支持基因编辑但须正视"黑暗用途"，伦理讨论从"安全与否"走向"用途与边界"（预测角度：基因编辑伦理/人类增强；得分 34/35） | 用户确认可读（2026-08-17），待用户提供全文 |
 
 > 背景关联：热点 3 已精读 Qazinform《Lab-grown brain computers spark new ethical debate》（脑类器官知情同意，转述 Nature 研究），可作 BCI 伦理角度的交叉参考。
 
@@ -181,3 +181,4 @@
 | 2026-08-14 | 定时任务运行：深度调研热点 11（AI 伴侣与情感依赖），新建热点 11 区段，新增 Atlantic《Friendship, on Demand》（33/35）与 Atlantic《The AI Companies Trying to Make Grief Obsolete》（32/35），均待用户确认；今日按 §7.6 无人确认兜底精读 RTÉ《One week off social media...》（热点6，29/35，代理可读，社会生活，与 8-13 经济科技轮换），该篇入库并标已精读；报告存 archive/2026-08-14.md（含 §10 原文全文附录）；候选清单（Guardian/Atlantic/CSM 一级来源）随推送请用户本机确认 |
 | 2026-08-16 | 定时任务运行：深度调研热点 12（公共卫生与医疗体系），新建库区段并新增 3 篇——SciAm 干旱土壤耐药菌（31/35）、Guardian NHS 麻醉师短缺（31/35）、Guardian 气候×耐药（30/35），均代理不可读标"待验证"；8-15 自动化未触发无报告；今日按 §7.6 无人确认兜底，精读 AP《Trump says the US will investigate EU trade practices》（热点8，29/35，经济科技，与 8-14 社会生活轮换）；报告存 archive/2026-08-16.md（含 §10 原文全文附录）；候选清单随推送请用户本机确认 |
 | 2026-08-17 | 定时任务运行：深度调研热点 13（生物科技与生命伦理），新建区段并收录 Nature 人胚胎碱基编辑（34/35）、SciAm 胚胎编辑"gateway"担忧（34/35）、Guardian 基因编辑社论（34/35）3 篇一级来源，均待用户确认；实测 SciAm 整站代理 403（§9 已更新为"需用户确认"）；用户 8-16 确认 Atlantic《Friendship, on Demand》（33/35）与 SciAm 干旱土壤耐药菌（31/35）本机可读，状态已更新待补全文；Guardian 社媒禁令质疑篇用户确认不可读，剔除候选；今日按 §8 应选社会生活，候选推送以 Atlantic 为首选（代理取不到全文，需用户提供文字） |
+| 2026-08-17 | 用户反馈热点13新增篇目可读性：Nature 人胚胎碱基编辑与 SciAm "gateway"篇确认不可读（剔除候选，保留条目备查）；Guardian 基因编辑社论确认可读（用户本机可打开，代理仍拦截，待提供全文）；§9 更新 Guardian 为"逐篇确认" |
