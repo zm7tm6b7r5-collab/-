@@ -152,7 +152,7 @@
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
 | The Atlantic | ✅ 用户确认可读（2026-08-16） | 用户本机已验证《Friendship, on Demand》全文可读，待补全文；其余 Atlantic 篇目仍需逐篇确认 |
-| The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读；代理持续拦截 |
+| The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
 | Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
 

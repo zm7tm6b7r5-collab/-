@@ -6,7 +6,7 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-16《Trump says the US will investigate EU trade practices, claiming the bloc unfairly fined tech giants》（热点8，经济科技）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **轮换状态**：上次精读 = 2026-08-17《The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones》（热点13，科技伦理/经济科技，**轮换妥协**——当日按 §8 本应社会生活，用户选定此篇并提供全文）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
 
@@ -146,7 +146,7 @@
 |------|------|------|------|---------|------|
 | Precise genome editing of human embryos triggers praise and alarm | Nature | 2026-06-04 | https://www.nature.com/articles/d41586-026-01827-8 | 一级来源：人胚胎碱基编辑（base editing）成功，科学家与生物伦理学家"赞誉与警觉"并存，正反论证完整（预测角度：基因编辑伦理；得分 34/35） | 用户确认不可读（2026-08-17），剔除候选 |
 | Experts call human-embryo-editing study a 'gateway' to ethically questionable uses | Scientific American | 2026-06-10 | https://www.scientificamerican.com/article/report-of-gene-edited-human-embryos-sparks-worries-about-the-technologys-future-uses/ | 一级来源：胚胎编辑研究被指为"通向可疑用途的门径"，直击人类增强与滑坡效应之争（预测角度：基因编辑伦理/滑坡谬误；得分 34/35） | 用户确认不可读（2026-08-17），剔除候选 |
-| The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones | The Guardian | 2026-07-05 | https://www.theguardian.com/commentisfree/2026/jul/05/the-guardian-view-on-gene-edited-humans-darker-uses-must-be-acknowledged-alongside-medical-ones | 一级来源社论：公众支持基因编辑但须正视"黑暗用途"，伦理讨论从"安全与否"走向"用途与边界"（预测角度：基因编辑伦理/人类增强；得分 34/35） | 用户确认可读（2026-08-17），待用户提供全文 |
+| The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones | The Guardian | 2026-07-05 | https://www.theguardian.com/commentisfree/2026/jul/05/the-guardian-view-on-gene-edited-humans-darker-uses-must-be-acknowledged-alongside-medical-ones | 一级来源社论：公众支持基因编辑但须正视"黑暗用途"，伦理讨论从"安全与否"走向"用途与边界"（预测角度：基因编辑伦理/人类增强；得分 34/35） | 已精读（2026-08-17） |
 
 > 背景关联：热点 3 已精读 Qazinform《Lab-grown brain computers spark new ethical debate》（脑类器官知情同意，转述 Nature 研究），可作 BCI 伦理角度的交叉参考。
 
@@ -182,3 +182,4 @@
 | 2026-08-16 | 定时任务运行：深度调研热点 12（公共卫生与医疗体系），新建库区段并新增 3 篇——SciAm 干旱土壤耐药菌（31/35）、Guardian NHS 麻醉师短缺（31/35）、Guardian 气候×耐药（30/35），均代理不可读标"待验证"；8-15 自动化未触发无报告；今日按 §7.6 无人确认兜底，精读 AP《Trump says the US will investigate EU trade practices》（热点8，29/35，经济科技，与 8-14 社会生活轮换）；报告存 archive/2026-08-16.md（含 §10 原文全文附录）；候选清单随推送请用户本机确认 |
 | 2026-08-17 | 定时任务运行：深度调研热点 13（生物科技与生命伦理），新建区段并收录 Nature 人胚胎碱基编辑（34/35）、SciAm 胚胎编辑"gateway"担忧（34/35）、Guardian 基因编辑社论（34/35）3 篇一级来源，均待用户确认；实测 SciAm 整站代理 403（§9 已更新为"需用户确认"）；用户 8-16 确认 Atlantic《Friendship, on Demand》（33/35）与 SciAm 干旱土壤耐药菌（31/35）本机可读，状态已更新待补全文；Guardian 社媒禁令质疑篇用户确认不可读，剔除候选；今日按 §8 应选社会生活，候选推送以 Atlantic 为首选（代理取不到全文，需用户提供文字） |
 | 2026-08-17 | 用户反馈热点13新增篇目可读性：Nature 人胚胎碱基编辑与 SciAm "gateway"篇确认不可读（剔除候选，保留条目备查）；Guardian 基因编辑社论确认可读（用户本机可打开，代理仍拦截，待提供全文）；§9 更新 Guardian 为"逐篇确认" |
+| 2026-08-17 | 用户提供 Guardian 基因编辑社论全文（约 580 词/5 段），完成精读：报告存 archive/2026-08-17.md（含 §10 原文全文附录；热点13，34/35，科技伦理=经济科技，标注轮换妥协）；轮换状态更新为下次应选社会生活；该条状态改为已精读 |
