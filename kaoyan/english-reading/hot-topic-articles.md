@@ -6,7 +6,7 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-17《The Guardian view on gene-edited humans: darker uses must be acknowledged alongside medical ones》（热点13，科技伦理/经济科技，**轮换妥协**——当日按 §8 本应社会生活，用户选定此篇并提供全文）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **轮换状态**：上次精读 = 2026-08-17-2《Friendship, on Demand》（热点11，AI 陪伴与孤独，**社会生活**，经 Flipboard 镜像获取全文，报告 archive/2026-08-17-2.md；当日第一篇 Guardian 基因编辑社论为经济科技/轮换妥协）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
 
@@ -125,7 +125,7 @@
 
 | 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
 |------|------|------|------|---------|------|
-| Friendship, on Demand | The Atlantic | 2026-03-17 | https://www.theatlantic.com/family/2026/03/ai-friendship-chatbot/686345/ | 一级来源：AI 陪伴缓解孤独的初步证据 vs "治标不治本/可能更糟"之争，正反论证完整（预测角度：AI 陪伴与孤独；得分 33/35；搜索返回 gift 链接可试读） | 用户确认不可读（2026-08-17），剔除候选 |
+| Friendship, on Demand | The Atlantic | 2026-03-17 | https://www.theatlantic.com/family/2026/03/ai-friendship-chatbot/686345/ | 一级来源：AI 陪伴缓解孤独的初步证据 vs "治标不治本/可能更糟"之争，正反论证完整（预测角度：AI 陪伴与孤独；得分 33/35；经 Flipboard 镜像获取全文） | 已精读（2026-08-17-2，报告 archive/2026-08-17-2.md） |
 | The AI Companies Trying to Make Grief Obsolete | The Atlantic | 2026-02-01 | https://www.theatlantic.com/ideas/2026/02/deadbots-ai-grief-obsolete/685811/ | 一级来源：AI"复活"逝者服务的商业动机与伦理争议，直击 digital grief（预测角度：数字哀悼；得分 32/35） | 待验证（Atlantic 代理不可读，需用户确认） |
 
 ---
@@ -184,4 +184,5 @@
 | 2026-08-17 | 用户反馈热点13新增篇目可读性：Nature 人胚胎碱基编辑与 SciAm "gateway"篇确认不可读（剔除候选，保留条目备查）；Guardian 基因编辑社论确认可读（用户本机可打开，代理仍拦截，待提供全文）；§9 更新 Guardian 为"逐篇确认" |
 | 2026-08-17 | 用户更正可读性反馈：Atlantic《Friendship, on Demand》（33/35）与 SciAm 干旱土壤耐药菌（31/35）此前确认可读，实际不可读，剔除候选（条目保留备查）；§9 同步修正 The Atlantic 与 SciAm 登记；§7.5 gift 链接示例降级为待验证 |
 | 2026-08-17 | Flipboard 镜像渠道验证并写入规则：用户本机确认《Friendship, on Demand》Flipboard story 页全文可读（正文待用户提供后精读）；§7.5 新增"Flipboard 镜像页"步骤并重排序号，§9 登记 Flipboard 为"⚠️ 逐篇确认" |
+| 2026-08-17 | 精读完成：《Friendship, on Demand》经 Flipboard 镜像获取全文（正文由用户提供），报告存 archive/2026-08-17-2.md（当日第二篇）；状态改"已精读（2026-08-17-2）"；轮换状态更新（上次=社会生活，下次应选经济科技）；§9 The Atlantic/Flipboard 备注同步 |
 | 2026-08-17 | 用户提供 Guardian 基因编辑社论全文（约 580 词/5 段），完成精读：报告存 archive/2026-08-17.md（含 §10 原文全文附录；热点13，34/35，科技伦理=经济科技，标注轮换妥协）；轮换状态更新为下次应选社会生活；该条状态改为已精读 |

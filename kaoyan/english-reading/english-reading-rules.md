@@ -153,8 +153,8 @@
 | 新华社英文 / People's Daily English / china.org.cn | ✅ 代理可读 | 权威背景（三级） |
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
-| The Atlantic | ❌ 需逐篇确认（2026-08-17 起） | 8-16 用户曾确认《Friendship, on Demand》可读，8-17 更正为原站实际不可读（剔除候选）；8-17 已通过 Flipboard 镜像获得全文；Atlantic 全部篇目需逐篇确认 |
-| Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读（正文待提供后精读）；代理访问 flipboard.com 被挡（FETCH_TIMEOUT/PROXY_ERROR），需用户本机打开；部分文章仅显示摘录，须逐篇确认 |
+| The Atlantic | ❌ 需逐篇确认（2026-08-17 起） | 8-16 用户曾确认《Friendship, on Demand》可读，8-17 更正为原站实际不可读（剔除候选）；8-17 已通过 Flipboard 镜像获得全文并精读（archive/2026-08-17-2.md）；Atlantic 全部篇目需逐篇确认 |
+| Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读，正文已提供并精读（archive/2026-08-17-2.md）；代理访问 flipboard.com 被挡（FETCH_TIMEOUT/PROXY_ERROR），需用户本机打开；部分文章仅显示摘录，须逐篇确认 |
 | The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
 | Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
