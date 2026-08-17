@@ -125,7 +125,7 @@
 
 | 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
 |------|------|------|------|---------|------|
-| Friendship, on Demand | The Atlantic | 2026-03-17 | https://www.theatlantic.com/family/2026/03/ai-friendship-chatbot/686345/ | 一级来源：AI 陪伴缓解孤独的初步证据 vs "治标不治本/可能更糟"之争，正反论证完整（预测角度：AI 陪伴与孤独；得分 33/35；搜索返回 gift 链接可试读） | 用户确认可读（2026-08-16），待用户提供全文后精读 |
+| Friendship, on Demand | The Atlantic | 2026-03-17 | https://www.theatlantic.com/family/2026/03/ai-friendship-chatbot/686345/ | 一级来源：AI 陪伴缓解孤独的初步证据 vs "治标不治本/可能更糟"之争，正反论证完整（预测角度：AI 陪伴与孤独；得分 33/35；搜索返回 gift 链接可试读） | 用户确认不可读（2026-08-17），剔除候选 |
 | The AI Companies Trying to Make Grief Obsolete | The Atlantic | 2026-02-01 | https://www.theatlantic.com/ideas/2026/02/deadbots-ai-grief-obsolete/685811/ | 一级来源：AI"复活"逝者服务的商业动机与伦理争议，直击 digital grief（预测角度：数字哀悼；得分 32/35） | 待验证（Atlantic 代理不可读，需用户确认） |
 
 ---
@@ -134,7 +134,7 @@
 
 | 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
 |------|------|------|------|---------|------|
-| Dangerous microbes may be hiding in drought-stricken soils | Scientific American | 2026-03-23 | https://www.scientificamerican.com/article/dangerous-microbes-may-be-hiding-in-drought-stricken-soils/ | 一级来源：干旱会促进土壤细菌产生抗生素耐药性，气候×公共卫生交叉、机制解释清楚（预测角度：极端天气与健康风险；得分 31/35） | 用户确认可读（2026-08-16），待用户提供全文后精读 |
+| Dangerous microbes may be hiding in drought-stricken soils | Scientific American | 2026-03-23 | https://www.scientificamerican.com/article/dangerous-microbes-may-be-hiding-in-drought-stricken-soils/ | 一级来源：干旱会促进土壤细菌产生抗生素耐药性，气候×公共卫生交叉、机制解释清楚（预测角度：极端天气与健康风险；得分 31/35） | 用户确认不可读（2026-08-17），剔除候选 |
 | NHS anaesthetist shortage prevents 1.5m operations a year, report finds | The Guardian | 2026-07-11 | https://www.theguardian.com/society/2026/jul/11/nhs-anaesthetist-shortage-prevents-operations | 一级来源：麻醉师短缺致 NHS 每年 150 万例手术无法进行，候诊名单 800 万+，医疗资源短缺的实证报道（预测角度：医疗体系压力与民生；得分 31/35） | 待验证（Guardian 代理不可读，需用户确认） |
 | Climate crisis is accelerating antibiotic resistance across world, study says | The Guardian | 2026-05-26 | https://www.theguardian.com/society/2026/may/26/climate-crisis-accelerating-antibiotic-resistance-across-world-salmonella-study | 一级来源：1940–2023 年沙门氏菌耐药基因随气候变暖上升 10%，气候×抗生素耐药的大数据关联研究（预测角度：气候与健康风险；得分 30/35） | 待验证（Guardian 代理不可读，需用户确认） |
 
@@ -182,4 +182,5 @@
 | 2026-08-16 | 定时任务运行：深度调研热点 12（公共卫生与医疗体系），新建库区段并新增 3 篇——SciAm 干旱土壤耐药菌（31/35）、Guardian NHS 麻醉师短缺（31/35）、Guardian 气候×耐药（30/35），均代理不可读标"待验证"；8-15 自动化未触发无报告；今日按 §7.6 无人确认兜底，精读 AP《Trump says the US will investigate EU trade practices》（热点8，29/35，经济科技，与 8-14 社会生活轮换）；报告存 archive/2026-08-16.md（含 §10 原文全文附录）；候选清单随推送请用户本机确认 |
 | 2026-08-17 | 定时任务运行：深度调研热点 13（生物科技与生命伦理），新建区段并收录 Nature 人胚胎碱基编辑（34/35）、SciAm 胚胎编辑"gateway"担忧（34/35）、Guardian 基因编辑社论（34/35）3 篇一级来源，均待用户确认；实测 SciAm 整站代理 403（§9 已更新为"需用户确认"）；用户 8-16 确认 Atlantic《Friendship, on Demand》（33/35）与 SciAm 干旱土壤耐药菌（31/35）本机可读，状态已更新待补全文；Guardian 社媒禁令质疑篇用户确认不可读，剔除候选；今日按 §8 应选社会生活，候选推送以 Atlantic 为首选（代理取不到全文，需用户提供文字） |
 | 2026-08-17 | 用户反馈热点13新增篇目可读性：Nature 人胚胎碱基编辑与 SciAm "gateway"篇确认不可读（剔除候选，保留条目备查）；Guardian 基因编辑社论确认可读（用户本机可打开，代理仍拦截，待提供全文）；§9 更新 Guardian 为"逐篇确认" |
+| 2026-08-17 | 用户更正可读性反馈：Atlantic《Friendship, on Demand》（33/35）与 SciAm 干旱土壤耐药菌（31/35）此前确认可读，实际不可读，剔除候选（条目保留备查）；§9 同步修正 The Atlantic 与 SciAm 登记；§7.5 gift 链接示例降级为待验证 |
 | 2026-08-17 | 用户提供 Guardian 基因编辑社论全文（约 580 词/5 段），完成精读：报告存 archive/2026-08-17.md（含 §10 原文全文附录；热点13，34/35，科技伦理=经济科技，标注轮换妥协）；轮换状态更新为下次应选社会生活；该条状态改为已精读 |

@@ -102,7 +102,7 @@
 
 > 原因：抓取服务（代理）的 IP 段常被网站反爬系统拦截（返回 403/超时/SSRF_BLOCKED），或受付费墙、地区限制影响；**这不代表文章打不开**——用户本机浏览器通常可以正常访问。
 
-1. **官方 gift 分享链接（2026-08-17 起首发尝试）**：部分付费媒体（已验证 The Atlantic）通过官方"赠阅"链接让非订阅者免费读单篇——**无需登录、不占用户免费额度**。适用前提：代理对原站整体拦截（如 Atlantic 返回 PROXY_ERROR）时先走此步。操作：检索 `site:媒体域名 + "原标题" + gift`，优先采用带 `?gift=` 参数的原站链接；每次给出 **2 条备用**（gift 链接有免费阅读次数上限，一条失效换另一条），随候选推送，用户本机打开后提供全文。已验证例：Atlantic《Friendship, on Demand》两条 gift 链接（2026-08-16 检索，用户本机可读）。
+1. **官方 gift 分享链接（2026-08-17 起首发尝试）**：部分付费媒体（如 The Atlantic）通过官方"赠阅"链接让非订阅者免费读单篇——**无需登录、不占用户免费额度**。适用前提：代理对原站整体拦截（如 Atlantic 返回 PROXY_ERROR）时先走此步。操作：检索 `site:媒体域名 + "原标题" + gift`，优先采用带 `?gift=` 参数的原站链接；每次给出 **2 条备用**（gift 链接有免费阅读次数上限，一条失效换另一条），随候选推送，用户本机打开后提供全文。检索例：Atlantic《Friendship, on Demand》两条 gift 链接（2026-08-16 检索可得），但该篇 2026-08-17 用户确认实际不可读，机制保留、示例待后续验证。
 2. **转载/通讯社版（最有效）**：BBC、FT、Guardian 等的一手新闻常被 Al Jazeera、RTÉ、Helsinki Times、CBC、新华社英文等全文转载。按原标题检索（如 `"Google fined €890m"`），验证后把可读替代链接标注在该条记录中，原版链接保留，状态注明"原版待验证 / 转载版可读"。已验证例：BBC《Google fined €890m》→ [RTÉ 同题转载可读](https://www.rte.ie/news/business/2026/0723/1584780-google-hit-with-1-billion-eu-fine/)。
 3. **原站 RSS / 新闻聚合**：BBC/FT/经济学人有官方 RSS；Google News、Flipboard（CSM 常经 Flipboard 分发）可搜到正文。
 4. **用户本机直连**：把链接发给用户，用浏览器打开（多数网站对本机网络正常，付费墙除外）。
@@ -146,13 +146,13 @@
 
 | 来源/渠道 | 状态（2026-08-10 实测） | 备注 |
 |-----------|------------------------|------|
-| Scientific American | ❌ 需用户确认（2026-08-17 起） | 2026-08-17 实测整站 403（含 8-12 曾可读篇目）；8-16 用户已确认干旱土壤耐药菌篇本机可读 |
+| Scientific American | ❌ 需用户确认（2026-08-17 起） | 2026-08-17 实测整站 403（含 8-12 曾可读篇目）；8-16 用户曾确认干旱土壤耐药菌篇可读，8-17 更正为实际不可读（剔除候选） |
 | RTÉ（含转载 BBC/Reuters 同题） | ✅ 代理可读 | 转载版全文可读 |
 | Associated Press（AP News） | ✅ 代理可读（2026-08-11 实测单篇） | 通讯社分析稿，不在分级表，按风格暂归二级备选 |
 | 新华社英文 / People's Daily English / china.org.cn | ✅ 代理可读 | 权威背景（三级） |
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
-| The Atlantic | ✅ 用户确认可读（2026-08-16） | 用户本机已验证《Friendship, on Demand》全文可读，待补全文；其余 Atlantic 篇目仍需逐篇确认 |
+| The Atlantic | ❌ 需逐篇确认（2026-08-17 起） | 8-16 用户曾确认《Friendship, on Demand》可读，8-17 更正为实际不可读（剔除候选）；Atlantic 全部篇目需逐篇确认 |
 | The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
 | Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
