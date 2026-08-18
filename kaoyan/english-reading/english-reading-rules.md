@@ -154,7 +154,7 @@
 | 新华社英文 / People's Daily English / china.org.cn | ✅ 代理可读 | 权威背景（三级） |
 | BNN Bloomberg / CNBC / livemint / Magzter | ⚠️ 曾可读（不稳定） | 转载/镜像，逐次验证 |
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
-| The Atlantic | ✅ 提升权限直连可抓（2026-08-17 实测） | open_page 抓取服务仍被挡；经 tools/fetch_article.ps1（提升权限通道）可直连抓取完整正文——付费墙为前端 JS、服务端返回全文；8-17 已直连抓取并精读《Friendship, on Demand》（archive/2026-08-17-2.md） |
+| The Atlantic | ✅ 提升权限直连可抓（2026-08-18 复核） | open_page 抓取服务仍被挡；经 tools/fetch_article.ps1（提升权限通道）可直连抓取完整正文——付费墙为前端 JS、服务端返回全文；8-17 已直连抓取并精读《Friendship, on Demand》（archive/2026-08-17-2.md）；8-18 再次直连抓取并精读《Universal Basic Capital》（archive/2026-08-18.md） |
 | Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读，正文已提供并精读（archive/2026-08-17-2.md）；正文由 JS 动态加载，静态抓取不可行，依赖用户本机提供；部分文章仅显示摘录，须逐篇确认 |
 | The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
 | Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |

@@ -6,8 +6,8 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-17-2《Friendship, on Demand》（热点11，AI 陪伴与孤独，**社会生活**，经 Flipboard 镜像获取全文，报告 archive/2026-08-17-2.md；当日第一篇 Guardian 基因编辑社论为经济科技/轮换妥协）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
-> **调研状态**：上一轮调研 = 2026-08-17 热点 13（生物科技与生命伦理）→ 下一轮从 **热点 1（AI与就业）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
+> **轮换状态**：上次精读 = 2026-08-18《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，AI×经济政策，**经济科技**，经 fetch_article.ps1 提升权限直连抓取全文，报告 archive/2026-08-18.md）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **调研状态**：上一轮调研 = 2026-08-18 热点 1（AI与就业）→ 下一轮从 **热点 2（青年心理健康危机）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
@@ -22,6 +22,8 @@
 | AI reshapes global labour market into two distinct paths, rewarding human skills: PwC 2026 AI Jobs Barometer | PwC Ireland（官方报告发布稿） | 2026-06-14 | https://www.pwc.ie/media-centre/press-releases/2026/ai-jobs-barometer-2026.html | "seniorisation"概念：AI 高暴露入门岗要求资深技能的比例高 7 倍，权威数据背景 | 未读 |
 | AI isn't destroying entry-level jobs. It's changing them | Financial Times | 2026-07-16 | https://www.ft.com/content/6cb9570b-dccd-46f5-b42a-4d0b7b5de35a | 一级来源：AI 投资最大的企业反而多招约 10% 员工、入门岗增多——直击"AI替代≠失业"核心命题（预测角度：初级岗实证；得分 33/35；FT 需用含 accessToken 的分享链接打开，见 2026-08-10 候选推送） | 待验证（需用户本机确认） |
 | High earners race ahead on AI as workplace divide widens | Financial Times | 2026-04-22 | https://www.ft.com/content/0873e3cb-cb02-4b47-941f-14da74149670 | 一级来源：知识工作者 AI 使用差异拉大职场鸿沟，呼应 job polarization（预测角度：职场极化；得分 30/35） | 待验证（FT 代理打不开） |
+| How big a threat is AI to entry-level jobs? | The Economist | 2026-01-29 | 原站直链未检索到；Gale 数据库记录：https://go.gale.com/ps/i.do?p=STND&u=philbibu&v=2.1&it=r&id=GALE%7CA873032654&digest=efbfa564d0e79665acd2b5da141ad74f&rssr=rss | 一级来源：AI 压缩企业"金字塔"、初级岗首当其冲，但放弃入门招聘将损害人才管道——直击初级岗实证+人才管道命题（预测角度：初级岗实证；得分 33/35；原站直链待检索补录，需机构访问 Gale 或用户本机确认） | 待验证 |
+| How the anxiety over AI could fuel a new workers' movement | The Guardian | 2026-02-19 | https://www.theguardian.com/technology/ng-interactive/2026/feb/19/ai-work-future | 一级来源（Reworked 系列）：AI 重塑职场的"人的代价"，工人焦虑催生组织化运动，现实 vs 炒作之辨（预测角度：职场极化/工人压力；得分 29/35） | 待验证（Guardian 代理不可读，需用户确认） |
 
 ## 2. 青年心理健康危机（概率 90%）
 
@@ -46,7 +48,7 @@
 | A deepfake can ruin you before breakfast | Scientific American（Hany Farid 访谈） | 2026-02-17 | https://www.scientificamerican.com/article/deepfakes-are-getting-faster-than-fact-checks-says-digital-forensics-expert/ | 一级来源：数字取证专家论深度伪造与信任基础设施，直击 deepfake/平台责任，全文可读（预测角度：deepfake/平台问责；得分 33/35） | 已精读（2026-08-13） |
 | How AI is reshaping human skills and thinking | APA Monitor on Psychology | 2026-07-01 | https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking | 认知卸载/cognitive atrophy 综述：AI 依赖如何削弱或强化批判思维，跨热点 3+4 | 未读 |
 | Anthropic asks religious thinkers to help shape Claude as pope warns about AI | Scientific American | 2026-05-26 | https://www.scientificamerican.com/article/anthropic-asks-religious-thinkers-to-help-shape-claude-as-pope-warns-about-ai/ | 一级来源：AI 价值观由谁塑造 + "ethics washing" 之争 + 教皇通谕，全文可读（预测角度：AI 价值观塑造；得分 35/35） | 已精读（2026-08-11） |
-| Why Everyone Is Suddenly Talking About 'Universal Basic Capital' | The Atlantic | 2026-07-01 | https://www.theatlantic.com/economy/2026/07/universal-basic-capital-ai/687759/ | 一级来源：AI 时代分配方案 UBC，科技×经济政策交叉，观点鲜明（预测角度：AI×经济政策；得分 30/35） | 待验证（Atlantic 代理超时） |
+| Why Everyone Is Suddenly Talking About 'Universal Basic Capital' | The Atlantic | 2026-07-02 | https://www.theatlantic.com/economy/2026/07/universal-basic-capital-ai/687759/ | 一级来源：AI 时代分配方案 UBC，科技×经济政策交叉，观点鲜明（预测角度：AI×经济政策；得分 31/35；2026-08-18 经 fetch_article.ps1 提升权限直连抓取全文成功，约 1,842 词） | 已精读（2026-08-18） |
 
 ## 4. 教育转型 · 情绪教育与终身学习（概率 85%）
 
@@ -137,8 +139,8 @@
 | 标题 | 来源 | 日期 | 链接 | 推荐理由 | 状态 |
 |------|------|------|------|---------|------|
 | Dangerous microbes may be hiding in drought-stricken soils | Scientific American | 2026-03-23 | https://www.scientificamerican.com/article/dangerous-microbes-may-be-hiding-in-drought-stricken-soils/ | 一级来源：干旱会促进土壤细菌产生抗生素耐药性，气候×公共卫生交叉、机制解释清楚（预测角度：极端天气与健康风险；得分 31/35） | 用户确认不可读（2026-08-17），剔除候选 |
-| NHS anaesthetist shortage prevents 1.5m operations a year, report finds | The Guardian | 2026-07-11 | https://www.theguardian.com/society/2026/jul/11/nhs-anaesthetist-shortage-prevents-operations | 一级来源：麻醉师短缺致 NHS 每年 150 万例手术无法进行，候诊名单 800 万+，医疗资源短缺的实证报道（预测角度：医疗体系压力与民生；得分 31/35） | 待验证（Guardian 代理不可读，需用户确认） |
-| Climate crisis is accelerating antibiotic resistance across world, study says | The Guardian | 2026-05-26 | https://www.theguardian.com/society/2026/may/26/climate-crisis-accelerating-antibiotic-resistance-across-world-salmonella-study | 一级来源：1940–2023 年沙门氏菌耐药基因随气候变暖上升 10%，气候×抗生素耐药的大数据关联研究（预测角度：气候与健康风险；得分 30/35） | 待验证（Guardian 代理不可读，需用户确认） |
+| NHS anaesthetist shortage prevents 1.5m operations a year, report finds | The Guardian | 2026-07-11 | https://www.theguardian.com/society/2026/jul/11/nhs-anaesthetist-shortage-prevents-operations | 一级来源：麻醉师短缺致 NHS 每年 150 万例手术无法进行，候诊名单 800 万+，医疗资源短缺的实证报道（预测角度：医疗体系压力与民生；得分 31/35） | 用户确认可读（2026-08-16），未精读（全文待补） |
+| Climate crisis is accelerating antibiotic resistance across world, study says | The Guardian | 2026-05-26 | https://www.theguardian.com/society/2026/may/26/climate-crisis-accelerating-antibiotic-resistance-across-world-salmonella-study | 一级来源：1940–2023 年沙门氏菌耐药基因随气候变暖上升 10%，气候×抗生素耐药的大数据关联研究（预测角度：气候与健康风险；得分 30/35） | 用户确认可读（2026-08-16），未精读（全文待补） |
 
 ---
 
@@ -192,3 +194,5 @@
 | 2026-08-17 | 新增 §7.5 首选渠道"提升权限直连抓取"：实测 The Atlantic 原站可经 tools/fetch_article.ps1 直连获取完整正文（付费墙为前端 JS、服务端返回全文，约 2,650 词与用户粘贴版一致）；§9 The Atlantic 改为"✅ 提升权限直连可抓"；新增工具脚本并配置固定抓取命令前缀 |
 | 2026-08-17 | 用户提供 Guardian 基因编辑社论全文（约 580 词/5 段），完成精读：报告存 archive/2026-08-17.md（含 §10 原文全文附录；热点13，34/35，科技伦理=经济科技，标注轮换妥协）；轮换状态更新为下次应选社会生活；该条状态改为已精读 |
 | 2026-08-18 | 工作流审计修正：DAILY-TASK 与规则文件同步 §7.5 新渠道（提升权限直连抓取 / gift 链接 / Flipboard 镜像）与 §10；付费墙红线按新渠道修订；§7.6 兜底扩展为"代理可读或可直连抓取"；§7.3 可读性计分明确直连抓取视同可打开；§9 表头与使用方式更新；文章库新增"调研状态"块与历史条目打分说明 |
+| 2026-08-18 | 定时任务运行：深度调研热点 1（AI与就业，95%），新增 Economist 初级岗威胁篇（33/35，原站直链未检索到、Gale 数据库可查，待验证）与 Guardian Reworked 工人运动篇（29/35，待验证）2 篇一级来源；调研状态更新（下一轮热点 2）；今日按 §8 应选经济科技，候选推送见当日消息 |
+| 2026-08-18 | 候选推送后无人确认，按 §7.6 兜底精读 Atlantic《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，31/35，经济科技，与 8-17-2 社会生活轮换；经 tools/fetch_article.ps1 提升权限直连抓取全文，约 1,842 词）；报告存 archive/2026-08-18.md（含 §10 原文全文附录）；该条状态改已精读；补录 8-16 用户确认：Guardian NHS 麻醉师短缺篇与 Guardian 气候×耐药篇本机可读（状态更新为"用户确认可读"，未精读，全文待补）；§9 Atlantic 登记复核通过 |
