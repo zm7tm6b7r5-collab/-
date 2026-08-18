@@ -111,6 +111,7 @@
 7. **Wayback Machine 等存档站**：`web.archive.org/web/原链接`；当前环境对 archive.org 也拦截时，由用户本机访问。
 8. **双语精读公众号**：如"考研英语精选外刊""LearnAndRecord"常搬运同源文章，可作精读参考，但收录仍以原文链接为准。
 9. 以上都无法获得全文：维持"待验证"，如实记录，**不编造内容**。
+10. **机构数据库全文记录（2026-08-18 新增）**：原站直链缺失/被挡时，可按标题在 Gale OneFile 等全文数据库中检索收录记录（如 `go.gale.com/ps/i.do?...id=GALE|...`），直连抓取可获完整正文——2026-08-18 实测 Economist《How big a threat is AI to entry-level jobs?》经此渠道取得全文（约 700 词）。收录仍以原刊为准，链接记录同时保留原站（如可得）与数据库记录。
 
 **转载版的使用规则**：转载版全文可读时，该条在选题中视为"可读"参与打分与精读（来源标注为"转载：XX"），但推荐理由中同时保留原版链接与转载链接。
 
@@ -156,8 +157,8 @@
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
 | The Atlantic | ✅ 提升权限直连可抓（2026-08-18 复核） | open_page 抓取服务仍被挡；经 tools/fetch_article.ps1（提升权限通道）可直连抓取完整正文——付费墙为前端 JS、服务端返回全文；8-17 已直连抓取并精读《Friendship, on Demand》（archive/2026-08-17-2.md）；8-18 再次直连抓取并精读《Universal Basic Capital》（archive/2026-08-18.md） |
 | Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读，正文已提供并精读（archive/2026-08-17-2.md）；正文由 JS 动态加载，静态抓取不可行，依赖用户本机提供；部分文章仅显示摘录，须逐篇确认 |
-| The Guardian | ⚠️ 逐篇确认 | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；代理持续拦截 |
-| Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认 | 代理持续拦截（一级来源，候选首选） |
+| The Guardian | ✅ 提升权限直连可抓（2026-08-18 单篇实测） | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；8-18 经 fetch_article.ps1 直连抓取 Reworked 工人运动篇全文成功（ng-interactive 页，正文约 900 词）；常规文章页未逐一验证，仍逐篇确认 |
+| Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认（原站） | 代理持续拦截（一级来源，候选首选）；Economist 单篇可经 Gale OneFile 全文库记录直连抓取（2026-08-18 实测，原站直链未检索到） |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
 
 **使用方式**：候选生成时按本表备注"代理可读 / 代理直连可读 / 需用户确认"；每次验证后更新对应行并注明日期——代理直连成功标"✅ 提升权限直连可抓"，用户确认标"✅ 用户确认可读"，单篇逐篇验证的标"⚠️ 逐篇确认"。

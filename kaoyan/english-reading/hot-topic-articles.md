@@ -6,7 +6,7 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-18《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，AI×经济政策，**经济科技**，经 fetch_article.ps1 提升权限直连抓取全文，报告 archive/2026-08-18.md）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **轮换状态**：上次精读 = 2026-08-18-2《How big a threat is AI to entry-level jobs?》（热点1，AI与就业，**经济科技**，经 Gale OneFile 全文库直连抓取，报告 archive/2026-08-18-2.md；当日第一篇 Atlantic UBC 亦为经济科技，属同日双篇、标注轮换妥协）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
 > **调研状态**：上一轮调研 = 2026-08-18 热点 1（AI与就业）→ 下一轮从 **热点 2（青年心理健康危机）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
@@ -22,8 +22,8 @@
 | AI reshapes global labour market into two distinct paths, rewarding human skills: PwC 2026 AI Jobs Barometer | PwC Ireland（官方报告发布稿） | 2026-06-14 | https://www.pwc.ie/media-centre/press-releases/2026/ai-jobs-barometer-2026.html | "seniorisation"概念：AI 高暴露入门岗要求资深技能的比例高 7 倍，权威数据背景 | 未读 |
 | AI isn't destroying entry-level jobs. It's changing them | Financial Times | 2026-07-16 | https://www.ft.com/content/6cb9570b-dccd-46f5-b42a-4d0b7b5de35a | 一级来源：AI 投资最大的企业反而多招约 10% 员工、入门岗增多——直击"AI替代≠失业"核心命题（预测角度：初级岗实证；得分 33/35；FT 需用含 accessToken 的分享链接打开，见 2026-08-10 候选推送） | 待验证（需用户本机确认） |
 | High earners race ahead on AI as workplace divide widens | Financial Times | 2026-04-22 | https://www.ft.com/content/0873e3cb-cb02-4b47-941f-14da74149670 | 一级来源：知识工作者 AI 使用差异拉大职场鸿沟，呼应 job polarization（预测角度：职场极化；得分 30/35） | 待验证（FT 代理打不开） |
-| How big a threat is AI to entry-level jobs? | The Economist | 2026-01-29 | 原站直链未检索到；Gale 数据库记录：https://go.gale.com/ps/i.do?p=STND&u=philbibu&v=2.1&it=r&id=GALE%7CA873032654&digest=efbfa564d0e79665acd2b5da141ad74f&rssr=rss | 一级来源：AI 压缩企业"金字塔"、初级岗首当其冲，但放弃入门招聘将损害人才管道——直击初级岗实证+人才管道命题（预测角度：初级岗实证；得分 33/35；原站直链待检索补录，需机构访问 Gale 或用户本机确认） | 待验证 |
-| How the anxiety over AI could fuel a new workers' movement | The Guardian | 2026-02-19 | https://www.theguardian.com/technology/ng-interactive/2026/feb/19/ai-work-future | 一级来源（Reworked 系列）：AI 重塑职场的"人的代价"，工人焦虑催生组织化运动，现实 vs 炒作之辨（预测角度：职场极化/工人压力；得分 29/35） | 待验证（Guardian 代理不可读，需用户确认） |
+| How big a threat is AI to entry-level jobs? | The Economist | 2026-01-29 | 原站直链未检索到；Gale 数据库记录：https://go.gale.com/ps/i.do?p=STND&u=philbibu&v=2.1&it=r&id=GALE%7CA873032654&digest=efbfa564d0e79665acd2b5da141ad74f&rssr=rss | 一级来源：AI 压缩企业"金字塔"、初级岗首当其冲，但放弃入门招聘将损害人才管道——直击初级岗实证+人才管道命题（预测角度：初级岗实证；得分 33/35；2026-08-18 经 Gale OneFile 直连抓取全文成功，正文约 700 词） | 已精读（2026-08-18-2） |
+| How the anxiety over AI could fuel a new workers' movement | The Guardian | 2026-02-19 | https://www.theguardian.com/technology/ng-interactive/2026/feb/19/ai-work-future | 一级来源（Reworked 系列）：AI 重塑职场的"人的代价"，工人焦虑催生组织化运动，现实 vs 炒作之辨（预测角度：职场极化/工人压力；得分 29/35；2026-08-18 经 fetch_article.ps1 直连抓取全文成功，正文约 900 词） | 用户确认可读（2026-08-18）；代理直连已抓全文，未精读（待后续排期） |
 
 ## 2. 青年心理健康危机（概率 90%）
 
@@ -196,3 +196,4 @@
 | 2026-08-18 | 工作流审计修正：DAILY-TASK 与规则文件同步 §7.5 新渠道（提升权限直连抓取 / gift 链接 / Flipboard 镜像）与 §10；付费墙红线按新渠道修订；§7.6 兜底扩展为"代理可读或可直连抓取"；§7.3 可读性计分明确直连抓取视同可打开；§9 表头与使用方式更新；文章库新增"调研状态"块与历史条目打分说明 |
 | 2026-08-18 | 定时任务运行：深度调研热点 1（AI与就业，95%），新增 Economist 初级岗威胁篇（33/35，原站直链未检索到、Gale 数据库可查，待验证）与 Guardian Reworked 工人运动篇（29/35，待验证）2 篇一级来源；调研状态更新（下一轮热点 2）；今日按 §8 应选经济科技，候选推送见当日消息 |
 | 2026-08-18 | 候选推送后无人确认，按 §7.6 兜底精读 Atlantic《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，31/35，经济科技，与 8-17-2 社会生活轮换；经 tools/fetch_article.ps1 提升权限直连抓取全文，约 1,842 词）；报告存 archive/2026-08-18.md（含 §10 原文全文附录）；该条状态改已精读；补录 8-16 用户确认：Guardian NHS 麻醉师短缺篇与 Guardian 气候×耐药篇本机可读（状态更新为"用户确认可读"，未精读，全文待补）；§9 Atlantic 登记复核通过 |
+| 2026-08-18 | 用户确认两篇候选可读（Economist Gale 记录、Guardian 本机）；Guardian 经 fetch_article.ps1 提升权限直连抓取全文成功（正文约 900 词）；Economist 经 Gale OneFile 全文库直连抓取成功（正文约 700 词，原站直链仍未检索到）；按 §7.6 分数优先精读 Economist（33/35，经济科技，与当日 Atlantic UBC 同为经济科技，属同日双篇轮换妥协）；报告存 archive/2026-08-18-2.md（含 §10 原文全文附录）；Guardian 状态改"用户确认可读+代理直连已抓全文"，未精读；§7.5 新增机构数据库全文渠道；§9 Guardian/Economist 登记更新 |
