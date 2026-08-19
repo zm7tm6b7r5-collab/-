@@ -6,8 +6,8 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-18-2《How big a threat is AI to entry-level jobs?》（热点1，AI与就业，**经济科技**，经 Gale OneFile 全文库直连抓取，报告 archive/2026-08-18-2.md；当日第一篇 Atlantic UBC 亦为经济科技，属同日双篇、标注轮换妥协）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
-> **调研状态**：上一轮调研 = 2026-08-18 热点 1（AI与就业）→ 下一轮从 **热点 2（青年心理健康危机）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
+> **轮换状态**：上次精读 = 2026-08-19《Hundreds of UK teenagers to trial six-week social media curbs for major study》（热点2，青年心理健康，**社会生活**，经 fetch_article.ps1 直连抓取全文，报告 archive/2026-08-19.md）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
+> **调研状态**：上一轮调研 = 2026-08-19 热点 2（青年心理健康危机）→ 下一轮从 **热点 3（AI伦理与治理）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
@@ -37,6 +37,8 @@
 | Don't ban teenagers from social media | The Economist（Leader 社论） | 2026-02-12 | https://www.economist.com/leaders/2026/02/12/dont-ban-teenagers-from-social-media | 经济学人立场：禁令弊大于利，与禁令派对照（付费墙，需订阅） | 待验证 |
 | Is social media addictive? The science reveals what's at stake | Scientific American | 2026-03-24 | https://www.scientificamerican.com/article/is-social-media-addictive-the-science-reveals-whats-at-stake/ | 一级来源：社媒成瘾之争 + Meta/YouTube 陪审团判决 + 正反证据，全文可读（预测角度：社媒成瘾机制+平台问责；得分 34/35） | 已精读（2026-08-10） |
 | Affective reactivity to upward social comparisons rather than social media use predicts increases in early adolescents' depressive symptoms | Scientific Reports（Nature） | 2026-06-20 | https://www.nature.com/articles/s41598-026-58879-z | 一级来源：向上社交比较→抑郁症状，比"屏幕时间"更精准的机制解释，呼应 social comparison 热词（预测角度：社交比较机制；得分 29/35，论文原文文体扣分） | 待验证（nature.com 代理打不开） |
+| Hundreds of UK teenagers to trial six-week social media curbs for major study | The Guardian | 2026-03-25 | https://www.theguardian.com/uk-news/2026/mar/25/hundreds-of-uk-teenagers-to-trial-six-week-social-media-curbs-for-major-study | 一级来源：全球首个大型"减少青少年社媒使用"科学试验 + 政府三方案试点（禁网/宵禁/限时），政策实证与多方立场完整（预测角度：禁令执行与副作用/数字干预实证；得分 33/35；2026-08-19 经 fetch_article.ps1 直连抓取全文成功，正文约 750 词） | 已精读（2026-08-19） |
+| UK teenagers face midnight curfew on using social media platforms | Financial Times | 2026-07-13 | https://www.ft.com/content/e3dc6768-8c8a-4e1e-9efc-a431b739a929?accessToken=zwAAAZ_9IAL6kdPj3GdojIpOHtOe_KQxtzmpKQE.MEYCIQDJmryvmkgVbqbWHlGQ3jIckvOM_A2eFo773XcZ0uYZUwIhANFCU8HQ_iy2iyl2JYWN4fQzcMKJumw_al0TV59YL5Ri&segmentId=7d4bcc2e-e664-92ba-62e3-5590579f1902&syn-25a6b1a6=1 | 一级来源：英国午夜宵禁 + 强制使用时长 + 18 岁以下 AI 聊天机器人限制，禁令执行细节最新动态（预测角度：禁令执行细节/平台责任；得分 30/35；accessToken 分享链接代理实测被安全验证页拦截，需用户本机打开） | 待验证（需用户本机确认） |
 
 ## 3. AI伦理与治理（概率 90%）
 
@@ -197,3 +199,4 @@
 | 2026-08-18 | 定时任务运行：深度调研热点 1（AI与就业，95%），新增 Economist 初级岗威胁篇（33/35，原站直链未检索到、Gale 数据库可查，待验证）与 Guardian Reworked 工人运动篇（29/35，待验证）2 篇一级来源；调研状态更新（下一轮热点 2）；今日按 §8 应选经济科技，候选推送见当日消息 |
 | 2026-08-18 | 候选推送后无人确认，按 §7.6 兜底精读 Atlantic《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，31/35，经济科技，与 8-17-2 社会生活轮换；经 tools/fetch_article.ps1 提升权限直连抓取全文，约 1,842 词）；报告存 archive/2026-08-18.md（含 §10 原文全文附录）；该条状态改已精读；补录 8-16 用户确认：Guardian NHS 麻醉师短缺篇与 Guardian 气候×耐药篇本机可读（状态更新为"用户确认可读"，未精读，全文待补）；§9 Atlantic 登记复核通过 |
 | 2026-08-18 | 用户确认两篇候选可读（Economist Gale 记录、Guardian 本机）；Guardian 经 fetch_article.ps1 提升权限直连抓取全文成功（正文约 900 词）；Economist 经 Gale OneFile 全文库直连抓取成功（正文约 700 词，原站直链仍未检索到）；按 §7.6 分数优先精读 Economist（33/35，经济科技，与当日 Atlantic UBC 同为经济科技，属同日双篇轮换妥协）；报告存 archive/2026-08-18-2.md（含 §10 原文全文附录）；Guardian 状态改"用户确认可读+代理直连已抓全文"，未精读；§7.5 新增机构数据库全文渠道；§9 Guardian/Economist 登记更新 |
+| 2026-08-19 | 定时任务运行：深度调研热点 2（青年心理健康，90%），新增 2 篇一级来源——Guardian 六周禁网试验篇（33/35，经 fetch_article.ps1 直连抓取全文成功）与 FT 午夜宵禁篇（30/35，accessToken 链接需用户本机确认）；调研状态更新（下一轮热点 3）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Guardian 六周试验篇（33/35，社会生活，与 8-18-2 经济科技轮换）；报告存 archive/2026-08-19.md（含 §10 原文全文附录）；§9 Guardian 常规新闻页直连复核成功、FT 安全验证拦截登记 |

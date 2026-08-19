@@ -157,8 +157,8 @@
 | BPS / KI News / Philea / UC Davis | ✅ 代理可读（三级背景） | 不作精读候选 |
 | The Atlantic | ✅ 提升权限直连可抓（2026-08-18 复核） | open_page 抓取服务仍被挡；经 tools/fetch_article.ps1（提升权限通道）可直连抓取完整正文——付费墙为前端 JS、服务端返回全文；8-17 已直连抓取并精读《Friendship, on Demand》（archive/2026-08-17-2.md）；8-18 再次直连抓取并精读《Universal Basic Capital》（archive/2026-08-18.md） |
 | Flipboard（镜像页） | ⚠️ 逐篇确认（2026-08-17 起） | 2026-08-17 用户验证《Friendship, on Demand》story 页全文可读，正文已提供并精读（archive/2026-08-17-2.md）；正文由 JS 动态加载，静态抓取不可行，依赖用户本机提供；部分文章仅显示摘录，须逐篇确认 |
-| The Guardian | ✅ 提升权限直连可抓（2026-08-18 单篇实测） | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；8-18 经 fetch_article.ps1 直连抓取 Reworked 工人运动篇全文成功（ng-interactive 页，正文约 900 词）；常规文章页未逐一验证，仍逐篇确认 |
-| Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认（原站） | 代理持续拦截（一级来源，候选首选）；Economist 单篇可经 Gale OneFile 全文库记录直连抓取（2026-08-18 实测，原站直链未检索到） |
+| The Guardian | ✅ 提升权限直连可抓（2026-08-19 复核） | 8-16 社媒禁令质疑篇用户确认不可读；8-17 基因编辑社论用户确认可读并已精读；8-18 直连抓取 Reworked 工人运动篇成功（ng-interactive 页）；8-19 直连抓取六周试验篇成功（常规新闻页，正文约 750 词）；常规页未逐一验证，仍逐篇确认 |
+| Economist / FT / Nature / BBC / CSM / Time / NYT / WaPo | ❌ 需用户确认（原站） | 代理持续拦截（一级来源，候选首选）；Economist 单篇可经 Gale OneFile 全文库记录直连抓取（2026-08-18 实测，原站直链未检索到）；FT accessToken 分享链接 2026-08-19 实测仍被安全验证页拦截，需用户本机打开 |
 | Al Jazeera / CBC / Helsinki Times / archive.org / archive.today / r.jina.ai / Guardian AMP / BBC RSS | ❌ 当前不可用 | 2026-08-10 实测被挡 |
 
 **使用方式**：候选生成时按本表备注"代理可读 / 代理直连可读 / 需用户确认"；每次验证后更新对应行并注明日期——代理直连成功标"✅ 提升权限直连可抓"，用户确认标"✅ 用户确认可读"，单篇逐篇验证的标"⚠️ 逐篇确认"。
