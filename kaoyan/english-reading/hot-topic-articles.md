@@ -6,8 +6,8 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-19《Hundreds of UK teenagers to trial six-week social media curbs for major study》（热点2，青年心理健康，**社会生活**，经 fetch_article.ps1 直连抓取全文，报告 archive/2026-08-19.md）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
-> **调研状态**：上一轮调研 = 2026-08-19 热点 2（青年心理健康危机）→ 下一轮从 **热点 3（AI伦理与治理）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
+> **轮换状态**：上次精读 = 2026-08-20《Can autonomous AI-powered killer drones take morality onboard?》（热点3，AI伦理，**经济科技**，经 fetch_article.ps1 直连抓取全文，报告 archive/2026-08-20.md）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **调研状态**：上一轮调研 = 2026-08-20 热点 3（AI伦理与治理）→ 下一轮从 **热点 4（教育转型）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
@@ -51,6 +51,8 @@
 | How AI is reshaping human skills and thinking | APA Monitor on Psychology | 2026-07-01 | https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking | 认知卸载/cognitive atrophy 综述：AI 依赖如何削弱或强化批判思维，跨热点 3+4 | 未读 |
 | Anthropic asks religious thinkers to help shape Claude as pope warns about AI | Scientific American | 2026-05-26 | https://www.scientificamerican.com/article/anthropic-asks-religious-thinkers-to-help-shape-claude-as-pope-warns-about-ai/ | 一级来源：AI 价值观由谁塑造 + "ethics washing" 之争 + 教皇通谕，全文可读（预测角度：AI 价值观塑造；得分 35/35） | 已精读（2026-08-11） |
 | Why Everyone Is Suddenly Talking About 'Universal Basic Capital' | The Atlantic | 2026-07-02 | https://www.theatlantic.com/economy/2026/07/universal-basic-capital-ai/687759/ | 一级来源：AI 时代分配方案 UBC，科技×经济政策交叉，观点鲜明（预测角度：AI×经济政策；得分 31/35；2026-08-18 经 fetch_article.ps1 提升权限直连抓取全文成功，约 1,842 词） | 已精读（2026-08-18） |
+| Can autonomous AI-powered killer drones take morality onboard? | The Guardian | 2026-06-03 | https://www.theguardian.com/world/2026/jun/03/can-autonomous-ai-powered-killer-drones-take-morality-onboard | 一级来源：自主武器能否"内置道德"——官方/学界/国际法/行业三方五派立场完整对立，直击"AI 价值观由谁塑造"与"人机协同判断"（预测角度：AI 价值观/自主武器伦理；得分 34/35；2026-08-20 经 fetch_article.ps1 直连抓取全文成功，正文约 1,100 词） | 已精读（2026-08-20） |
+| Elon Musk's AI chatbot generates child sexual images | Financial Times | 2026-01-01 | https://www.ft.com/content/0747a53c-19b6-4ed9-8eea-88c327f27fe6?accessToken=zwAGR3fTEg3Akc8HR6U8GbZO2dOO6ojDJ_J_5g.MEQCIAkCvtcP7K8Uqz_d4m8MjVRmSl-hwf-NXJ_GS4WqIRBVAiBxH3v7NCZ0gtR6zYeyanpjBeZ38PZebK6_rU6-waYt3Q&sharetype=gift&token=05ddcb92-07ea-4992-a327-678dc8932288&syn-25a6b1a6=1 | 一级来源（调查报道）：AI 生成有害内容的法律缺口（Take It Down Act 等），直击"监管滞后/velocity gap"角度（预测角度：AI 内容安全与监管；得分 28/35；gift 分享链接需用户本机打开；内容涉 CSAM 议题，仅作监管缺口素材，精读优先级低） | 待验证（需用户本机确认） |
 
 ## 4. 教育转型 · 情绪教育与终身学习（概率 85%）
 
@@ -200,3 +202,4 @@
 | 2026-08-18 | 候选推送后无人确认，按 §7.6 兜底精读 Atlantic《Why Everyone Is Suddenly Talking About 'Universal Basic Capital'》（热点3，31/35，经济科技，与 8-17-2 社会生活轮换；经 tools/fetch_article.ps1 提升权限直连抓取全文，约 1,842 词）；报告存 archive/2026-08-18.md（含 §10 原文全文附录）；该条状态改已精读；补录 8-16 用户确认：Guardian NHS 麻醉师短缺篇与 Guardian 气候×耐药篇本机可读（状态更新为"用户确认可读"，未精读，全文待补）；§9 Atlantic 登记复核通过 |
 | 2026-08-18 | 用户确认两篇候选可读（Economist Gale 记录、Guardian 本机）；Guardian 经 fetch_article.ps1 提升权限直连抓取全文成功（正文约 900 词）；Economist 经 Gale OneFile 全文库直连抓取成功（正文约 700 词，原站直链仍未检索到）；按 §7.6 分数优先精读 Economist（33/35，经济科技，与当日 Atlantic UBC 同为经济科技，属同日双篇轮换妥协）；报告存 archive/2026-08-18-2.md（含 §10 原文全文附录）；Guardian 状态改"用户确认可读+代理直连已抓全文"，未精读；§7.5 新增机构数据库全文渠道；§9 Guardian/Economist 登记更新 |
 | 2026-08-19 | 定时任务运行：深度调研热点 2（青年心理健康，90%），新增 2 篇一级来源——Guardian 六周禁网试验篇（33/35，经 fetch_article.ps1 直连抓取全文成功）与 FT 午夜宵禁篇（30/35，accessToken 链接需用户本机确认）；调研状态更新（下一轮热点 3）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Guardian 六周试验篇（33/35，社会生活，与 8-18-2 经济科技轮换）；报告存 archive/2026-08-19.md（含 §10 原文全文附录）；§9 Guardian 常规新闻页直连复核成功、FT 安全验证拦截登记 |
+| 2026-08-20 | 定时任务运行：深度调研热点 3（AI伦理与治理，90%），新增 2 篇一级来源——Guardian 自主武器道德篇（34/35，经 fetch_article.ps1 直连抓取全文成功）与 FT Musk 聊天机器人 CSAM 调查篇（28/35，gift accessToken 需用户本机确认，内容敏感仅作监管缺口素材）；调研状态更新（下一轮热点 4）；今日按 §8 应选经济科技，按 §7.6 无人确认兜底精读 Guardian 自主武器篇（34/35，经济科技，与 8-19 社会生活轮换）；报告存 archive/2026-08-20.md（含 §10 原文全文附录）；§9 Guardian 常规页第三次直连成功 |
