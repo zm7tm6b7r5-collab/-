@@ -6,8 +6,8 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-20《Can autonomous AI-powered killer drones take morality onboard?》（热点3，AI伦理，**经济科技**，经 fetch_article.ps1 直连抓取全文，报告 archive/2026-08-20.md）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
-> **调研状态**：上一轮调研 = 2026-08-20 热点 3（AI伦理与治理）→ 下一轮从 **热点 4（教育转型）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
+> **轮换状态**：上次精读 = 2026-08-21《Does AI stop children from learning?》（热点4，教育转型，**社会生活**，经 Hindustan Times 转载版直连抓取，报告 archive/2026-08-21.md）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
+> **调研状态**：上一轮调研 = 2026-08-21 热点 4（教育转型）→ 下一轮从 **热点 5（老龄化与代际公平）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
@@ -62,6 +62,8 @@
 | 'It's going to be a life skill': educators discuss the impact of AI on university education | The Guardian（genain3 转载页） | 2025-09-12 | http://genain3.ie/its-going-to-be-a-life-skill-educators-discuss-the-impact-of-ai-on-university-education/ | 大学教育如何应对生成式 AI，终身学习角度 | 待验证 |
 | AI demands that human judgement become a defined degree outcome | Times Higher Education（评论） | 2026-06-09 | https://www.timeshighereducation.com/opinion/ai-demands-human-judgement-become-defined-degree-outcome | 大学须把"人类判断力"设为可评估培养目标，直击软技能/教育转型命题，无付费墙 | 已精读（2026-08-06） |
 | AI is making skills go obsolete faster, so learning how to learn is the real job now: Pearson CEO | CNBC TV18（Pearson CEO 访谈） | 2026-02-04 | https://www.cnbctv18.com/technology/learning-is-the-new-skill-pearson-ceo-ai-shrinking-half-life-of-jobs-19843497.htm/amp | "知识半衰期缩短 + 学习本身是技能"，终身学习命题角度 | 未读 |
+| Does AI stop children from learning? | The Economist（Hindustan Times 转载；原站直链未检索到） | 2026-08-18 | https://www.hindustantimes.com/education/does-ai-stop-children-from-learning-101787133042096-amp.html | 一级来源：中国 27,000 名学生追踪研究——AI 让作业分 +18% 但考试分 -20%，"AI 助学习但只在聪明使用时"（预测角度：AI 进课堂争议/学习方式；得分 34/35；2026-08-21 经 fetch_article.ps1 直连抓取转载版全文成功，正文约 700 词） | 已精读（2026-08-21） |
+| AI in the classroom prompts tide of concern from US parents and experts | The Guardian | 2026-06-23 | https://www.theguardian.com/education/2026/jun/23/ai-us-schools-students | 一级来源：家长/儿童发展专家 vs 科技公司与政府，"AI 进课堂证据不足"之争 + cognitive off-loading（认知外包）（预测角度：AI 进课堂争议；得分 34/35；2026-08-21 经 fetch_article.ps1 直连抓取全文成功，正文约 1,150 词） | 代理直连已抓全文（2026-08-21），未精读 |
 
 ## 5. 老龄化与代际公平（概率 80%）
 
@@ -203,3 +205,4 @@
 | 2026-08-18 | 用户确认两篇候选可读（Economist Gale 记录、Guardian 本机）；Guardian 经 fetch_article.ps1 提升权限直连抓取全文成功（正文约 900 词）；Economist 经 Gale OneFile 全文库直连抓取成功（正文约 700 词，原站直链仍未检索到）；按 §7.6 分数优先精读 Economist（33/35，经济科技，与当日 Atlantic UBC 同为经济科技，属同日双篇轮换妥协）；报告存 archive/2026-08-18-2.md（含 §10 原文全文附录）；Guardian 状态改"用户确认可读+代理直连已抓全文"，未精读；§7.5 新增机构数据库全文渠道；§9 Guardian/Economist 登记更新 |
 | 2026-08-19 | 定时任务运行：深度调研热点 2（青年心理健康，90%），新增 2 篇一级来源——Guardian 六周禁网试验篇（33/35，经 fetch_article.ps1 直连抓取全文成功）与 FT 午夜宵禁篇（30/35，accessToken 链接需用户本机确认）；调研状态更新（下一轮热点 3）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Guardian 六周试验篇（33/35，社会生活，与 8-18-2 经济科技轮换）；报告存 archive/2026-08-19.md（含 §10 原文全文附录）；§9 Guardian 常规新闻页直连复核成功、FT 安全验证拦截登记 |
 | 2026-08-20 | 定时任务运行：深度调研热点 3（AI伦理与治理，90%），新增 2 篇一级来源——Guardian 自主武器道德篇（34/35，经 fetch_article.ps1 直连抓取全文成功）与 FT Musk 聊天机器人 CSAM 调查篇（28/35，gift accessToken 需用户本机确认，内容敏感仅作监管缺口素材）；调研状态更新（下一轮热点 4）；今日按 §8 应选经济科技，按 §7.6 无人确认兜底精读 Guardian 自主武器篇（34/35，经济科技，与 8-19 社会生活轮换）；报告存 archive/2026-08-20.md（含 §10 原文全文附录）；§9 Guardian 常规页第三次直连成功 |
+| 2026-08-21 | 定时任务运行：深度调研热点 4（教育转型，85%），新增 2 篇一级来源——Economist《Does AI stop children from learning?》（34/35，2026-08-18 最新，经 Hindustan Times 转载版直连抓取全文成功）与 Guardian《AI in the classroom prompts tide of concern...》（34/35，直连抓取全文成功）；调研状态更新（下一轮热点 5）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Economist AI 学习篇（34/35，社会生活，与 8-20 经济科技轮换；同分候选按调研热点/时效优选）；报告存 archive/2026-08-21.md（含 §10 原文全文附录）；§9 Hindustan Times（Economist 转载）直连成功登记 |
