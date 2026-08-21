@@ -6,8 +6,8 @@
 > 来源分级（2026-08-10 起执行，详见 `english-reading-rules.md` §六）：一级 = Guardian / Economist / Atlantic / CSM / Time / NYT / SciAm / Newsweek / Nature / BBC / WaPo / FT（精读首选）；二级 = Conversation / Psychology Today / New Scientist / HBR / Bloomberg / New Yorker / MIT Tech Review / Wired / Spectator / Telegraph（备选）；三级 = ILO/OECD/WHO/UN/新华社、期刊论文与机构新闻稿（仅作"背景"，不选为精读）。
 > 预测式检索（2026-08-10 加入，详见 `english-reading-rules.md` §七）：先按热点命题角度预测"命题组可能选什么文章"，再 site: 限定一级来源检索；候选按 35 分制打分（同源度 10 / 命题匹配 10 / 文体 5 / 辩证性 5 / 时效 3 / 可读性 2），≥30 分优先精读；**候选生成不看代理可读性**，按 7.6 用户确认通道交用户本机验证。
 > 链接状态说明：凡状态标"未读"但来源在 §9 登记为"需用户确认/代理不可读"的条目（如 Guardian/BBC/FT/Nature），正文需用户本机确认后按 7.6 精读，不因代理打不开而视为失效。
-> **轮换状态**：上次精读 = 2026-08-21《Does AI stop children from learning?》（热点4，教育转型，**社会生活**，经 Hindustan Times 转载版直连抓取，报告 archive/2026-08-21.md）→ 下次应选 **经济科技**；判定规则见 `english-reading-rules.md` §8。
-> **调研状态**：上一轮调研 = 2026-08-21 热点 4（教育转型）→ 下一轮从 **热点 5（老龄化与代际公平）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
+> **轮换状态**：上次精读 = 2026-08-22《How boomers have screwed Europe, sticking its few kids with the bill》（热点5，老龄化财政，**经济科技**，经 The West Australian 转载版直连抓取，报告 archive/2026-08-22.md）→ 下次应选 **社会生活**；判定规则见 `english-reading-rules.md` §8。
+> **调研状态**：上一轮调研 = 2026-08-22 热点 5（老龄化与代际公平）→ 下一轮从 **热点 6（社交媒体监管与信息生态）** 继续（TOP13 循环，规则 §1.2 / §7.2）。
 > 历史条目说明：2026-08-10 打分制生效前的早期条目未逐篇打分，仅作背景库存；一旦进入候选，须按 §7.3 补打得分并入推荐理由。
 
 ## 1. AI与就业 · 结构性替代（概率 95%）
@@ -46,7 +46,7 @@
 |------|------|------|------|---------|------|
 | Lab-grown brain computers spark new ethical debate | Qazinform（转述 Nature 文章） | 2026-08-02 | https://qazinform.com/news/lab-grown-brain-computers-spark-new-ethical-debate-0918af | 脑类器官计算的知情同意问题，科技伦理代表作 | 已精读（2026-08-03） |
 | Musk proposes peer review for frontier AI models in Economist interview | The Economist 访谈（Reuters 供稿，BNN Bloomberg 转载） | 2026-07-23 | https://www.bnnbloomberg.ca/business/2026/07/23/musk-proposes-peer-review-for-frontier-ai-models-in-economist-interview/ | 前沿 AI 安全监管最新争论，直击"velocity gap"，无付费墙 | 已精读（2026-08-05） |
-| Who is winning in AI—China or America? | The Economist（Mint 转载） | 2025-12-08 | https://www.livemint.com/global/who-is-winning-in-ai-china-or-america-11765265668426.html | AI 治理全球竞争，呼应命题"去美国化"趋势 | 未读 |
+| Who is winning in AI—China or America? | The Economist（Mint 转载） | 2025-12-08 | https://www.livemint.com/global/who-is-winning-in-ai-china-or-america-11765265668426.html | 一级来源："Beijing effect" vs "Brussels effect"，中美 AI 治理路线竞争与 DeepSeek 时刻，呼应"去美国化"（预测角度：AI 治理全球竞争；得分 33/35；2026-08-22 经 fetch_article.ps1 直连抓取转载版全文成功，正文约 950 词） | 代理直连已抓全文（2026-08-22），未精读 |
 | A deepfake can ruin you before breakfast | Scientific American（Hany Farid 访谈） | 2026-02-17 | https://www.scientificamerican.com/article/deepfakes-are-getting-faster-than-fact-checks-says-digital-forensics-expert/ | 一级来源：数字取证专家论深度伪造与信任基础设施，直击 deepfake/平台责任，全文可读（预测角度：deepfake/平台问责；得分 33/35） | 已精读（2026-08-13） |
 | How AI is reshaping human skills and thinking | APA Monitor on Psychology | 2026-07-01 | https://www.apa.org/monitor/2026/07-08/ai-job-skills-thinking | 认知卸载/cognitive atrophy 综述：AI 依赖如何削弱或强化批判思维，跨热点 3+4 | 未读 |
 | Anthropic asks religious thinkers to help shape Claude as pope warns about AI | Scientific American | 2026-05-26 | https://www.scientificamerican.com/article/anthropic-asks-religious-thinkers-to-help-shape-claude-as-pope-warns-about-ai/ | 一级来源：AI 价值观由谁塑造 + "ethics washing" 之争 + 教皇通谕，全文可读（预测角度：AI 价值观塑造；得分 35/35） | 已精读（2026-08-11） |
@@ -76,6 +76,8 @@
 | NI's population is ageing rapidly - this is what it means for society | BBC News | 2026-04-27 | https://www.bbc.com/news/articles/c98r4we4g8ko | 抚养比（dependency ratio）数据解读：每 1000 劳动人口养 586 名被抚养者（本次运行代理打不开，需人工确认） | 待验证 |
 | Merz backs plans to raise Germany's retirement age to 70 in pension changes | The Guardian | 2026-06-23 | https://www.theguardian.com/world/2026/jun/23/merz-plans-germany-retirement-age-pension-reforms | 一级来源：德国退休年龄 67→70 之争，直击延迟退休/代际公平（预测角度：延迟退休争议；得分 31/35） | 待验证（Guardian 站点代理不可读） |
 | Over 70s working beyond retirement age over financial fears | BBC News | 2026-05-24 | https://www.bbc.com/news/articles/cd6pn9y36p8o | 一级来源：70 岁以上仍因经济压力工作，女性受影响更重，民生故事+数据（预测角度：老龄化民生；得分 28/35） | 待验证（BBC 代理打不开） |
+| How boomers have screwed Europe, sticking its few kids with the bill | The Economist（The West Australian 转载；原站直链未检索到） | 2026-05-31 | https://thewest.com.au/business/the-economist/economist-how-the-boomers-screwed-europe-sticking-its-few-kids-with-the-bill-c-22364328 | 一级来源：老龄化成本吞掉欧盟 GDP 1/4，养老金现收现付 vs 私人养老金、住房代际转移与"老人政治"，直击延迟退休/养老金可持续/代际公平三角度（预测角度：养老金可持续/代际公平；得分 34/35；2026-08-22 经 fetch_article.ps1 直连抓取转载版全文成功，正文约 950 词） | 已精读（2026-08-22） |
+| Young people need money because our system is rigged. Here's a way to give it to them | The Guardian（Polly Toynbee 专栏） | 2026-06-09 | https://www.theguardian.com/commentisfree/2026/jun/09/young-people-money-citizens-advance-generations-older-people | 一级来源：SMF"公民预支"方案——40 岁以下可提前支取养老金换延后退休，代际财富转移 £5.5tn 背景（预测角度：代际公平/养老金改革；得分 33/35；2026-08-22 经 fetch_article.ps1 直连抓取全文成功，正文约 1,000 词） | 代理直连已抓全文（2026-08-22），未精读 |
 
 > 调研备注：本热点下近一年主流外刊文章较少，后续运行可用 eldercare robots / silver economy / dependency ratio / intergenerational equity 等关键词继续深挖。
 
@@ -206,3 +208,4 @@
 | 2026-08-19 | 定时任务运行：深度调研热点 2（青年心理健康，90%），新增 2 篇一级来源——Guardian 六周禁网试验篇（33/35，经 fetch_article.ps1 直连抓取全文成功）与 FT 午夜宵禁篇（30/35，accessToken 链接需用户本机确认）；调研状态更新（下一轮热点 3）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Guardian 六周试验篇（33/35，社会生活，与 8-18-2 经济科技轮换）；报告存 archive/2026-08-19.md（含 §10 原文全文附录）；§9 Guardian 常规新闻页直连复核成功、FT 安全验证拦截登记 |
 | 2026-08-20 | 定时任务运行：深度调研热点 3（AI伦理与治理，90%），新增 2 篇一级来源——Guardian 自主武器道德篇（34/35，经 fetch_article.ps1 直连抓取全文成功）与 FT Musk 聊天机器人 CSAM 调查篇（28/35，gift accessToken 需用户本机确认，内容敏感仅作监管缺口素材）；调研状态更新（下一轮热点 4）；今日按 §8 应选经济科技，按 §7.6 无人确认兜底精读 Guardian 自主武器篇（34/35，经济科技，与 8-19 社会生活轮换）；报告存 archive/2026-08-20.md（含 §10 原文全文附录）；§9 Guardian 常规页第三次直连成功 |
 | 2026-08-21 | 定时任务运行：深度调研热点 4（教育转型，85%），新增 2 篇一级来源——Economist《Does AI stop children from learning?》（34/35，2026-08-18 最新，经 Hindustan Times 转载版直连抓取全文成功）与 Guardian《AI in the classroom prompts tide of concern...》（34/35，直连抓取全文成功）；调研状态更新（下一轮热点 5）；今日按 §8 应选社会生活，按 §7.6 无人确认兜底精读 Economist AI 学习篇（34/35，社会生活，与 8-20 经济科技轮换；同分候选按调研热点/时效优选）；报告存 archive/2026-08-21.md（含 §10 原文全文附录）；§9 Hindustan Times（Economist 转载）直连成功登记 |
+| 2026-08-22 | 定时任务运行：深度调研热点 5（老龄化与代际公平，80%），新增 2 篇一级来源——Economist 婴儿潮世代篇（34/35，经 The West Australian 转载版直连抓取全文成功，已精读）与 Guardian Toynbee 公民预支专栏（33/35，直连抓取全文成功）；另复核 Mint 转载 Economist《Who is winning in AI—China or America?》直连成功（补分 33/35）；调研状态更新（下一轮热点 6）；今日按 §8 应选经济科技，按 §7.6 无人确认兜底精读 Economist 婴儿潮篇（34/35，经济科技/财政角度，与 8-21 社会生活轮换）；报告存 archive/2026-08-22.md（含 §10 原文全文附录）；§9 The West（Economist 转载）与 Mint 直连成功登记 |
